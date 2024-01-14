@@ -1,4 +1,331 @@
-: root {
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200&family=Poppins:wght@200&family=Roboto:wght@300&display=swap');
 
-    color
+* {
+
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+
+:root {
+
+    --dodger-blue: #1e90ff;
+    --element-height-relative: 70vh;
+    --primary-font-Roboto-family: 'Roboto', sans-serif;
+    --secondary-font-Poppins-family: 'Poppins', sans-serif;
+    --tertiary-font-Libre-family: 'Libre Franklin', sans-serif;
+  
+}
+
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+a {
+    color: black;
+    font-family: var(--secondary-font-Poppins-family);
+    text-decoration: none;
+}
+
+
+/* Color scheme styles */
+.blue-color {
+    color: rgb(5, 5, 71);
+}
+
+.dark-green {
+    color: darkgreen;
+}
+
+.white-color {
+    color: white!important;
+}
+
+/* End of color scheme */
+
+
+/* background colors */
+.black-bg-color {
+    background-color: black;
+}
+
+/* A type of blue color */
+.dodger-blue-bg-color {
+    background: var(--dodger-blue); 
+}
+
+.white-bg-color {
+    background-color: white;
+}
+
+/* End of background color schemes */
+
+
+
+/* Flex elements */
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-space-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-space-evenly {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* End of flex elements */
+
+
+
+/* font sizes */
+
+.font-md {
+    font-size: 1.125rem;
+}
+
+
+.font-lg {
+    font-size: 1.2rem;
+}
+
+.font-xl {
+    font-size: 2.5rem;
+}
+
+
+.text-captalize {
+    text-transform: capitalize!important;
+}
+
+/* End of font sizes */
+
+
+/* margin sizes */
+.margin-top-sm {
+    margin-top: 20px;
+}
+
+.margin-top-md {
+    margin-top: 60px;
+}
+
+.margin-bottom-lg {
+    margin-bottom: 60px;
+}
+
+.margin-top-lg {
+    margin-top: 100px;
+}
+
+.margin-top-xl {
+    margin-top: 90px;
+}
+
+
+/* End of margin sizes */
+
+
+/* padding elements */
+
+.padding-top-md {
+    padding-top: 60px;
+}
+
+.padding-top-xl {
+    padding-top: 165px;
+}
+
+/* End of padding elements */
+
+
+
+/* Utilies elements */
+
+.active {
+    border-bottom: 4px solid blue;
+    font-weight: bolder;
+    color: blue;
+}
+
+.bold {
+    font-weight: bolder!important;
+}
+
+.box {
+    border: 1px solid wheat;
+    padding: 10px;
+    background: blue;
+  }
+
+.center-text {
+    text-align: center;
+}
+
+.lifted {
+    transform: translateY(-10px);
+}
+
+.text-upper {
+    text-transform: uppercase;
+}
+
+.text-left-align {
+    text-align: left;
+}
+
+
+ 
+
+/* End of utilies elements */
+
+
+
+
+/* Navbar elements */
+
+.nav-container {
+    padding-bottom: 1px;
+    padding-top: 20px;
+
+}
+
+.nav-links {
+    display: flex;
+    gap: 50px; 
+  }
+  
+.nav-links a {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links > a:focus {
+    border: 1px solid white;
+    border-bottom: 4px solid white;
+    font-weight: bolder;
+    padding-right: 27px;
+    padding-left: 27px;
+    padding-top: 10px;
+}
+.nav-links a:hover{
+
+    background: white;
+    border-top: 4px solid red;
+    border-bottom: 4px solid red;
+    color: red;
+    font-weight: bolder;
+    padding-right: 27px;
+    padding-left: 27px;
+    padding-top: 10px;
+  
+  }
+
+
+/* End of navigation elements */
+  
+  
+/* Banner elements */
+
+
+
+.banner {
+ 
+    background: linear-gradient(-16deg, lavender 51%, white 48%, white), lavender;
+    border-bottom: 4px solid lavender;
+    border-right: 5px lavender; 
+    border-right: 40px solid lavender;
+    height: auto;
+
+}
+
+.banner-container {
+    border-bottom: 4px lavender;
+}
+
+.banner-img {
+    height: 75vh;
+    width: 100%;
+}
+
+
+/* End of banner elements */
+
+
+/* Buttons elements start here */
+
+.button-md {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+
+.contact-us-btn {
+    border: 1px solid rgba(4, 4, 47, 0.771);
+}
+
+.learn-more-btn:hover {
+    background: white;
+    color: black;
+    border: lavender;
+    border: 4px solid lavender;
+    transition: all 3s ease-in-out;   
+   
+}
+
+.learn-more-btn {
+    color: white;
+    font-weight: bolder;
+}
+
+
+.contact-us-btn:hover {
+    background: black;
+    color: white;
+    border: 3px solid green;
+    transition: all 3s ease-in-out; 
+}
+/* Buttons elements end here */
+
+
+
+/* The call to action section */
+.call-to-action > * {
+    display: flex;
+    font-family: var(--secondary-font-Poppins-family);
+}
+
+
+.call-to-action p {
+    line-height: 2;
+    text-transform: capitalize;
+}
+
+/* End call of action elements */
+
+
+
+.agency-title {
+    font-family: var(--primary-font-Roboto-family);
+}
+
+.get-quote:hover {
+    background: orange;
+    border: 1px solid black;
+    cursor: pointer;
+    font-weight: bolder;
+    transition: all 1s ease-in-out; 
+  
+   
 }
