@@ -224,7 +224,7 @@ a {
     background: white;
     border-top: 4px solid red;
     border-bottom: 4px solid red;
-    color: red;
+    color: red!important;
     font-weight: bolder;
     padding-right: 27px;
     padding-left: 27px;
