@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200&family=Poppins:wght@200&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 
 * {
 
@@ -17,6 +18,7 @@
     --primary-font-Roboto-family: 'Roboto', sans-serif;
     --secondary-font-Poppins-family: 'Poppins', sans-serif;
     --tertiary-font-Libre-family: 'Libre Franklin', sans-serif;
+    --secondary-font-2-dancing-script-family: 'Dancing Script', cursive;
   
 }
 
@@ -80,6 +82,11 @@ a {
     justify-content: space-around;
 }
 
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
 .flex-space-evenly {
     display: flex;
     justify-content: space-evenly;
@@ -101,7 +108,7 @@ a {
 }
 
 .font-xl {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
 }
 
 
@@ -125,6 +132,10 @@ a {
     margin-bottom: 60px;
 }
 
+.margin-bottom-xlg {
+    margin-bottom: 170px;
+}
+
 .margin-top-lg {
     margin-top: 100px;
 }
@@ -133,6 +144,9 @@ a {
     margin-top: 90px;
 }
 
+.margin-right-xxl {
+    margin-right: 119px;
+}
 
 /* End of margin sizes */
 
@@ -147,6 +161,9 @@ a {
     padding-top: 165px;
 }
 
+.padding-left-lg {
+    padding-left: 74px;
+}
 /* End of padding elements */
 
 
@@ -191,7 +208,17 @@ a {
 /* End of utilies elements */
 
 
+/* The logo */
 
+.logo {
+    font-family: var(--secondary-font-2-dancing-script-family);
+}
+
+.logo:hover {
+    color: var(--dodger-blue);
+}
+
+/* the logo ends here */
 
 /* Navbar elements */
 
@@ -228,6 +255,7 @@ a {
     font-weight: bolder;
     padding-right: 27px;
     padding-left: 27px;
+    /* padding-top: 1px; */
   
   }
 
