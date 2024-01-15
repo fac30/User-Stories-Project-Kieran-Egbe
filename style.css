@@ -11,6 +11,7 @@
 }
 
 
+  
 :root {
 
     --dodger-blue: #1e90ff;
@@ -19,7 +20,9 @@
     --secondary-font-Poppins-family: 'Poppins', sans-serif;
     --tertiary-font-Libre-family: 'Libre Franklin', sans-serif;
     --secondary-font-2-dancing-script-family: 'Dancing Script', cursive;
-  
+    --dark-red: rgb(90, 11, 11);
+    --dark-blue: rgb(4, 4, 57);
+
 }
 
 
@@ -49,6 +52,10 @@ a {
     color: white;
 }
 
+.red {
+    color: var(--dark-red)!important;
+}
+
 /* End of color scheme */
 
 
@@ -60,6 +67,17 @@ a {
 /* A type of blue color */
 .dodger-blue-bg-color {
     background: var(--dodger-blue); 
+}
+
+.red-bg-color {
+    background: var(--dark-red);
+}
+.ghost-white-bg-color {
+    background: ghostwhite;
+}
+
+.lavender-bg-color {
+    background: lavender;
 }
 
 .white-bg-color {
@@ -80,18 +98,24 @@ a {
 .flex-space-around {
     display: flex;
     justify-content: space-around;
+   
 }
 
 .flex-space-between {
     display: flex;
     justify-content: space-between;
+    /* flex-wrap: wrap; */
 }
 
 .flex-space-evenly {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
+.flex-row {
+    display: flex;
+}
 /* End of flex elements */
 
 
@@ -152,7 +176,16 @@ a {
 
 
 /* padding elements */
+.padding-xsm {
+    padding: 10px;
+}
+.padding-sm {
+    padding: 20px;
+}
 
+.padding-top-sm {
+    padding-top: 20px;
+}
 .padding-top-md {
     padding-top: 60px;
 }
@@ -230,6 +263,7 @@ a {
 
 .nav-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 50px; 
   }
   
@@ -259,10 +293,92 @@ a {
   
   }
 
+.popup {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    height: auto;
+    position: fixed;
+    width: 65%;
+    margin: auto;
+    top: -10000px;
+    left: 0;
+    right: 0;
+    font-family: var(--primary-font-Roboto-family);
+    transition: all 2.5s ease-in-out;
+    
+
+  }
+ .popup:hover {
+    opacity: 0.97;
+    border: 1px solid darkgreen;
+ }
+
+
+  .popup > .container {
+    display: flex;
+    background: lavender;
+  }
+
+  .popup-img {
+    height: 400px;
+    width: 400px;
+    border-right: 2px solid lavender;
+   
+  }
+
+  .popup-info {
+    width: 100%;
+  }
+
+  .popup-info-title {
+    color: var(--dark-red);
+  }
+  .popup-info > p  {
+    padding-top: 30px;
+  }
+
+  .popup-info > p:last-child {
+    padding-bottom: 30px;
+}
+
+.show-popup {
+    top: 70px;
+}
+.hide-popup {
+  
+ }
 
 /* End of navigation elements */
   
-  
+.popup-info > p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+.popup-input-field {
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.popup-close-icon {
+   
+     position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 50%;
+        border: 1px solid red;
+        padding: 10px;
+        background: var(--dark-blue);
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      
+}
+
+.popup-close-icon:hover {
+    background: red;
+    transform: rotate(360deg);
+}
 /* Banner elements */
 
 
@@ -330,6 +446,7 @@ a {
 /* The call to action section */
 .call-to-action > * {
     display: flex;
+    flex-wrap: wrap;
     font-family: var(--secondary-font-Poppins-family);
 }
 
@@ -339,6 +456,9 @@ a {
     text-transform: capitalize;
 }
 
+.subscribe-btn:hover {
+    background: var(--dodger-blue);
+}
 /* End call of action elements */
 
 
@@ -356,3 +476,23 @@ a {
   
    
 }
+
+
+/* the spinner elements */
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    display: none;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* end of spinner elements */
