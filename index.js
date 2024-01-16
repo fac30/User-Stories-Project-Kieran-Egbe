@@ -1,5 +1,5 @@
 import { getQuery }      from "./static/js/utils.js";
-import { NavigationElements, PopupElements } from "./static/settings.js";
+import { FormElements, NavigationElements, PopupElements } from "./static/settings.js";
 
 
 const navQuoteLink        = getQuery(NavigationElements.QUOTE_BTN_LINK)
@@ -7,6 +7,7 @@ const quoteBox            = getQuery(NavigationElements.QUOTE_BOX)
 const quotePopupBox       = getQuery(PopupElements.QuoteBox.POPUP_BOX_CLASS_ID);
 const quotePopupCloseIcon = getQuery(PopupElements.QuoteBox.CLOSE_ICON_ID);
 const navSpinner          = getQuery(NavigationElements.SPINNER)
+const subscribeForm       = getQuery(FormElements.SubscribeForm.FORM)
 
 
 
@@ -28,6 +29,26 @@ function closeQuotePopupBox() {
 
     quotePopupCloseIcon.addEventListener("click", handlePopupClose);
 
+}
+
+
+
+function submitSubscriptionForm() {
+    
+    if (!subscribeForm) {
+        console.error("Subscribe form not found!");
+        return;
+    }
+
+    subscribeForm.addEventListener("submit", handleSubmission);
+}
+
+
+function handleSubmission(e) {
+    e.preventDefault();
+    Swal.fire("Subscription Successful", "You've successfully subscribed to our mailing list!", "success");
+    e.target.reset();  
+    // closeQuotePopupBox();
 }
 
 
@@ -86,3 +107,4 @@ function showQuoteButton() {
 
 closeQuotePopupBox();
 showQuotePopupBox();
+submitSubscriptionForm()

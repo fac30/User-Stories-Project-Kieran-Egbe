@@ -38,10 +38,17 @@ const PopupElements = {
 }
 
 
+const FormElements = {
+    SubscribeForm: {
+        FORM: "#popup-form",
+    }
+
+}
 
 
 
 export {
+    FormElements,
     NavigationElements,
     PopupElements
 }
