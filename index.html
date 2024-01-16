@@ -3,8 +3,10 @@
 <head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Agency name to be decided....</title>
+    <link rel="shortcut icon" href="static/img/popupImg.svg" type="image/x-icon">
+    <title>QuantumWeb Innovations</title>
 </head>
 <body>
 
@@ -26,10 +28,62 @@
                 </div>
     
                 <div class="get-quote box lifted">
-                    <a href="#" class="nav-link white-color bold dark-green text-upper" aria-label="Get a Quote">Get quote</a>
+                    <div class="spinner"></div>
+                    <div class="quote-box">
+                        <a href="#" class="nav-link white-color bold dark-green text-upper" id="quote" aria-label="Get a Quote">Get quote</a>
+
+                    </div>
                 </div>
             </div>
         </nav>
+
+        <div class="popup ghost-white-bg-color padding-xsm">
+
+            <div class="container">
+                <div class="close">
+                    <i class="fa-solid fa-x popup-close-icon" id="popup-close-icon"></i>
+                </div>
+                 <div class="popup-image white-bg-color">
+                    <img src="static/img/popupImg.svg" alt="pop image for dropdown" 
+                        class="popup-img"
+                        aria-label="popup box image"  srcset="">
+                 </div>
+
+                 <div class="popup-info lavender-bg-color flex-column padding-sm">
+                    <h1 class="center-text bold text-upper popup-info-title red"> Get Quote</h1>
+                    <p>Hey, there!!</p>
+                    <p> Thank you for choosing <span class="bold">QuantumWeb Innovations</span></p>
+                    <p>
+                        To receive a <span class="bold">customized quote </span>and explore how we can meet your needs, 
+                        please take a moment to fill out our <span class="bold">contact form</span> below.
+
+                    </p>
+                    <p>
+                        We're eager to <span class="bold">connect with you</span>, 
+                        answer any questions you may have, and kickstart the conversation. 
+                        Your satisfaction is our priority, and we look forward to the opportunity of working together!
+                    </p>
+                    <p>While you here while not <span class="bold">subscribe</span> to our newsletter. We promise we won't spam you.
+                    </p>
+                  
+
+                    <form action="" id="popup-form">
+                        <div class="container flex-row padding-top-sm">
+                            <input type="email" name="email" id="popup-email"
+                                      aria-labelledby="popup-form" 
+                                      class="padding-sm popup-input-field" placeholder="email..." required role="form">
+                            <button type="submit" class="button-md red-bg-color white-color text-upper subscribe-btn">Subscribe</button>
+                        </div>
+                        
+    
+                     </form>
+
+                 </div>
+
+                 
+            </div>
+          
+        </div>
     </header>
     
     
@@ -41,6 +95,7 @@
             
           
             <h1 class="font-xl bold text-upper margin-bottom-xlg agency-title">QuantumWeb Innovations</h1>
+            
             <p class="dark-green bold font-lg blue-color">Elevate your digital presences with us</p>
             <p class="dark-green bold font-lg blue-color">Where innovation meets design presence</p>
 
@@ -88,7 +143,13 @@
             <footer>
             </footer>
     </section>
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="index.js" type="module"></script>
+
     
-    <script src="/index.js"></script>
+  
+
 </body>
 </html>
