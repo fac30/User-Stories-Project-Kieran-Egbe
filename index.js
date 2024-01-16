@@ -1,4 +1,4 @@
-import { getQuery }      from "./static/js/utils.js";
+import {getQuery, isElementValid }      from "./static/js/utils.js";
 import { FormElements, NavigationElements, PopupElements } from "./static/settings.js";
 
 
@@ -11,8 +11,15 @@ const subscribeForm       = getQuery(FormElements.SubscribeForm.FORM)
 
 
 
+
 /**
- * When call the function closes the open quote popup box
+ *
+ * When the close icon is clicked the quote popup box's visibility is toggled,
+ * and a navigation spinner is triggered for a duration of X-milliseconds.
+ *
+ * @example
+ * // Call the function to close the open quote popup box.
+ * closeQuotePopupBox();
  */
 function closeQuotePopupBox() {
 
@@ -23,33 +30,82 @@ function closeQuotePopupBox() {
     function handlePopupClose(e) {
         const DURATION = 2000;
 
-        quotePopupBox.classList.toggle('show-popup');
-        handleNavSpinner(DURATION)
+        const errorMsg = "The quote box element was not found!!!";
+
+        if (isValid(quotePopupCloseIcon, errorMsg)) {
+            quotePopupBox.classList.toggle('show-popup');
+            handleNavSpinner(DURATION);
+        }
+      
     }
 
-    quotePopupCloseIcon.addEventListener("click", handlePopupClose);
+    /**
+     * Runs an event listener on the quote popup close icon, triggering a specified action when clicked
+     */
+    function runEventListener() {
+        const errorMsg = "The quote box icon element was not found!!!"
+        if (isValid(quotePopupCloseIcon, errorMsg)) {
+            quotePopupCloseIcon.addEventListener("click", handlePopupClose);
+        }
+    }
 
+    /**
+     * Takes a selector element and checks the validity of the element.
+     * @returns {boolean} Returns true if the element is valid, otherwise returns false.
+     */
+    function isValid(selectorElement, errorMsg) {
+        return isElementValid(selectorElement, errorMsg);
+    }
+
+    runEventListener();
 }
 
 
-
+/**
+ * Submits the subscription form but ensures the validity of the subscription form 
+ * 
+ * @example
+ * submitSubscriptionForm();
+ */
 function submitSubscriptionForm() {
     
-    if (!subscribeForm) {
-        console.error("Subscribe form not found!");
-        return;
+    /**
+     * Sets up an event listener for the subscription form submission.
+     * Adds a submit event listener to the subscribeForm element, invoking handleSubmission.
+     */
+    function runEventListener() {
+        const errorMsg = "The subscription form element was not found!!!";
+        if (isValid(subscribeForm, errorMsg)) {
+            subscribeForm.addEventListener("submit", handleSubmission);
+        }
+    }
+   
+    /**
+     * Handles the submission of the form
+     * @param {e} event parameter
+     */
+    function handleSubmission(e) {
+        e.preventDefault();
+        Swal.fire("Subscription Successful", "You've successfully subscribed to our mailing list!", "success");
+        e.target.reset();  
+    }
+    
+    /**
+     * Checks the validity of the specified selector element.
+     * 
+     * @param {HTMLElement} selectorElement - The HTML element to validate.
+     * @param {string} errorMsg - The error message to be logged if the element is not valid.
+     * @returns {boolean} Returns true if the element is valid, otherwise returns false.
+     */
+    function isValid(selectorElement, errorMsg) {
+        return isElementValid(selectorElement, errorMsg);
     }
 
-    subscribeForm.addEventListener("submit", handleSubmission);
+
+    runEventListener();
 }
 
 
-function handleSubmission(e) {
-    e.preventDefault();
-    Swal.fire("Subscription Successful", "You've successfully subscribed to our mailing list!", "success");
-    e.target.reset();  
-    // closeQuotePopupBox();
-}
 
 
 function showQuotePopupBox() {
@@ -69,10 +125,11 @@ function handleNavSpinner(duration) {
     let isSpinnrVisible = true;
     
     hideQuoteButton();
-    showSpinner();
+    toggleSpinnerVisibility(navSpinner, true);
 
     setTimeout(() => {
-        hideSpinner();
+
+        toggleSpinnerVisibility(navSpinner, false)
         isSpinnrVisible = false;
 
         if (!isSpinnrVisible) {
@@ -82,24 +139,71 @@ function handleNavSpinner(duration) {
 }
 
 
-function hideQuoteButton() {
-    quoteBox.style.display = "none"; 
+
+
+function toggleSpinnerVisibility(spinnerElement, shouldShowSpinner = false) {
+
+    /**
+     * Shows the spinner by setting display style to "flex".
+     */
+    function showSpinner() {
+        updateSpinnerVisibility("flex");
+    }
+
+    /**
+     * Hides the spinner by setting display style to "none".
+     */
+    function hideSpinner() {
+        updateSpinnerVisibility("none");
+    }
+
+    /**
+     * Updates the spinner visibility based on the provided display style.
+     * @param {string} displayStyle - The display style for the spinner.
+     */
+    function updateSpinnerVisibility(displayStyle) {
+        if (isValid()) {
+            spinnerElement.style.display = displayStyle;
+        };
+       
+    }
+
+    /**
+     * Checks if the spinner element is valid.
+     * Throws an error if the spinner element is not found.
+     * @param {HTMLElement} spinnerElement - The spinner element.
+     * @returns {boolean} - True if the spinner element is valid.
+     */
+    function isValid() {
+        const errorMsg = "The spinner element was not found";
+        return isElementValid(spinnerElement, errorMsg)
+    }
+
+    function run() {
+        switch (shouldShowSpinner) {
+            case true:
+                showSpinner();
+                break;
+            case false:
+                hideSpinner();
+                break;
+        }
+    }
+   
+    
+    run();
+    
 }
 
-
-function showSpinner() {
-    navSpinner.style.display = "flex";   
- }
-
-
-function hideSpinner() {
-    navSpinner.style.display = "none";
- }
 
 
 
 function showQuoteButton() {
     quoteBox.style.display = "flex";
+}
+
+function hideQuoteButton() {
+    quoteBox.style.display = "none"; 
 }
 
 

@@ -72,7 +72,10 @@
                             <input type="email" name="email" id="popup-email"
                                       aria-labelledby="popup-form" 
                                       class="padding-sm popup-input-field" placeholder="email..." required role="form">
-                            <button type="submit" class="button-md red-bg-color white-color text-upper subscribe-btn">Subscribe</button>
+                            <button type="submit" class="button-md red-bg-color white-color text-upper subscribe-btn">
+                                <div class="spinner subscribe-spinner"></div>
+                                Subscribe
+                            </button>
                         </div>
                         
     
@@ -94,7 +97,7 @@
         <div class="call-to-action flex-column text-align-left margin-top-xl">
             
           
-            <h1 class="font-xl bold text-upper margin-bottom-xlg agency-title">QuantumWeb Innovations</h1>
+            <h1 class="font-xl bold margin-bottom-xlg agency-title logo"><span class="blue-color">Q</span>uantum <span>W</span>eb  Innovations</h1>
             
             <p class="dark-green bold font-lg blue-color">Elevate your digital presences with us</p>
             <p class="dark-green bold font-lg blue-color">Where innovation meets design presence</p>
@@ -112,44 +115,91 @@
 
     <section aria-labelledby="introduction">
         <h1 id="introduction"></h1>
-        <p></p>
+        <p>SOME SECTION TO GO HERE</p>
     </section>
 
     <section aria-labelledby="about-team">
         <h2 id="about-team"></h2>
-        <p></p>
+        <p>SOME SECTION TO GO HERE</p>
     </section>
 
 
-    <section aria-labelledby="contact-info">
-        <h4 id="contact-info"></h4>
-        <p></p>
-        <p></p>
+    <section id="contact-us">
+       
+        <div class="container flex-row padding-top-xl">
+
+            
+            <div class="contact flex-column">
+
+               <div class="contact-us-title">
+                <h1 class="font-xxl padding-bottom-md">Contact Us</h1>
+               </div>
+                <div class="contact-msg">
+                    <p>We would love to hear from you! Please fill out the contact form below, and we'll get back to you as soon as possible.</p>
+                    <p>We try to get back to you no sooner than three days</p>
+                </div>
+                
+            </div>
+            
+            <div class="contact-form margin-right-sm">
+
+        
+            <form action="" id="contact-form" class="flex-column white-bg-color" role="form">
+
+                <div class="form-title center-text padding-top-md padding-bottom-md">
+                    <h1 class="bold text-upper">Contact Form</h1>
+                </div>
+               
+                <label for="contact-form-id">Title</label>
+                <input type="text" name="title" id="contact-form-id" required aria-labelledby="titleLabel">
+            
+                <label for="contact-form-email">Email</label>
+                <input type="email" name="email" id="contact-form-email" required aria-labelledby="emailLabel">
+            
+                <label for="contact-form-company">Company</label>
+                <input type="text" name="company" id="contact-form-company" required aria-labelledby="companyLabel">
+            
+                <label for="contact-number">Preferred contact: </label>
+                <select name="contact-number" id="contact-number" required aria-labelledby="contactNumberLabel">
+                    <option value="" selected></option>
+                    <option value="mobile">Mobile</option>
+                    <option value="phone">Phone</option>
+                </select>
+                <!-- placeholder -->
+                <!-- <input type="text" name="contact-number" id="contact-form-number" required aria-labelledby="contactNumberLabel"> -->
+            
+                <label for="country">Country: </label>
+                <select name="location" id="country" required aria-labelledby="countryLabel">
+                    <option value="" selected></option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                </select>
+            
+                <label for="description">Reason for contacting us: </label>
+                <textarea name="reason" id="description" cols="40" rows="10" aria-labelledby="descriptionLabel"></textarea>
+                
+                
+                <div class="button right-align padding-top-sm">
+                    <button type="submit" class="button-md text-upper dodger-blue-bg-color white-color bold">
+                        <span class="visually-hidden">Submit Form</span>
+                        Send
+                    </button>
+                </div>
+                
+            </form>
+            </div>
+
+        </div>
     </section>
 
-    <section aria-labelledby="user-form">
-        <h3 id="user-form"></h3>
-        <form action="submit-form" method="post">
-            <label for=""></label>
-            <input type="">
-            <label for=""></label>
-            <input type="">
-            <label for=""></label>
-            <input type="">
-        </form>
-    </section>
+   
 
     <section aria-labelledby="footer">
             <footer>
             </footer>
     </section>
-
   
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="index.js" type="module"></script>
-
-    
-  
-
 </body>
 </html>

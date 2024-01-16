@@ -22,6 +22,8 @@
     --secondary-font-2-dancing-script-family: 'Dancing Script', cursive;
     --dark-red: rgb(90, 11, 11);
     --dark-blue: rgb(4, 4, 57);
+    --container-width: 88%;
+    --font-sm: 1.25rem;
 
 }
 
@@ -36,6 +38,10 @@ a {
     color: black;
     font-family: var(--secondary-font-Poppins-family);
     text-decoration: none;
+}
+
+button {
+    cursor: pointer;
 }
 
 
@@ -135,6 +141,9 @@ a {
     font-size: 2.1rem;
 }
 
+.font-xxl {
+    font-size: 3.1rem;
+}
 
 .text-captalize {
     text-transform: capitalize!important;
@@ -164,6 +173,9 @@ a {
     margin-top: 100px;
 }
 
+.margin-right-sm {
+    margin-right: 40px;
+}
 .margin-top-xl {
     margin-top: 90px;
 }
@@ -190,10 +202,16 @@ a {
     padding-top: 60px;
 }
 
+.padding-bottom-md {
+    padding-bottom: 60px;
+}
 .padding-top-xl {
     padding-top: 165px;
 }
 
+.padding-bottom-lg {
+    padding-bottom: 165px;
+}
 .padding-left-lg {
     padding-left: 74px;
 }
@@ -235,6 +253,18 @@ a {
     text-align: left;
 }
 
+
+.text-right-align {
+    text-align: right;
+}
+
+.right-align {
+     
+    display: flex;
+    align-items: inherit;
+    justify-content: flex-end;
+
+}
 
  
 
@@ -310,7 +340,6 @@ a {
   }
  .popup:hover {
     opacity: 0.97;
-    border: 1px solid darkgreen;
  }
 
 
@@ -496,3 +525,88 @@ a {
 }
 
 /* end of spinner elements */
+
+/* 
+the contact us section */
+
+#contact-us {
+    
+    /* TODO */
+    /* background colors to be decided */
+
+    border-top: 2px solid lavender;
+}
+
+#contact-us > div {
+    width: var(--container-width);
+    margin: auto;
+    font-family: var(--secondary-font-Poppins-family);
+    font-weight: 900;
+    /* padding-top: 100px; */
+}
+
+
+
+.contact-msg > p {
+    width: 95%;
+    line-height: 1.7;
+}
+
+.contact-form {
+    width: 60%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;
+    padding: 20px;
+    border-radius: 3%;
+    cursor: pointer;
+
+    /* background: ghostwhite; */
+}
+
+
+
+#contact-form > input[type="text"],
+#contact-form >  input[type="number"],
+#contact-form >input[type="email"],
+#contact-form > textarea,
+#contact-form > select {
+    background: ghostwhite; 
+    font-family: var(--primary-font-Roboto-family);
+    border: 2px solid lavender;
+    font-size: var(--font-sm);
+}
+
+#contact-form > input[type="text"],
+#contact-form > input[type="number"],
+#contact-form > input[type="email"],
+#contact-form > select {
+    height: 40px;
+}
+
+#contact-form > label {
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+
+/* #contact-form-number  {
+    padding-top: 0;
+    margin-top: 0;
+} */
+
+/* Visually hidden class for screen reader-only text */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.contact-msg > p {
+    font-size: 1.125rem;
+}
+
+/* End of contact form section */
