@@ -59,9 +59,16 @@ button {
 }
 
 .red {
-    color: var(--dark-red)!important;
+    color: var(--dark-red);
 }
 
+.light-red {
+    color: red;
+}
+
+.black-color{
+    color: black;
+}
 /* End of color scheme */
 
 
@@ -552,14 +559,14 @@ the contact us section */
     line-height: 1.7;
 }
 
-.contact-form {
-    width: 60%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;
-    padding: 20px;
+.contact-form  {
+    width: 70%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 65px;
     cursor: pointer;
-
-    /* background: ghostwhite; */
+  
 }
+
 
 
 
