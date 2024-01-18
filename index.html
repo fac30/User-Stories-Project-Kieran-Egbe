@@ -176,11 +176,18 @@
                 </select>
             
                 <label for="description">Reason for contacting us: </label>
-                <textarea name="reason" id="description" cols="40" rows="10" aria-labelledby="descriptionLabel"></textarea>
+                <textarea name="reason" id="description" cols="40" rows="10" aria-labelledby="descriptionLabel" minlength="50"  maxlength="500" required></textarea>
+                <div class="minimum-characters text-right-align" aria-live="polite" aria-atomic="true">
+                    <p aria-hidden="true" class="minimum-char-string">Minimum characters to use: 50</p>
+                </div>
+                <div class="characters-remaining text-right-align" aria-live="polite" aria-atomic="true">
+                    <p aria-hidden="true" class="remaining-char-string">Number of characters remaining: 500</p>
+                </div>
+               
                 
                 
                 <div class="button right-align padding-top-sm">
-                    <button type="submit" class="button-md text-upper dodger-blue-bg-color white-color bold">
+                    <button type="submit" class="button-md text-upper dodger-blue-bg-color white-color">
                         <span class="visually-hidden">Submit Form</span>
                         Send
                     </button>

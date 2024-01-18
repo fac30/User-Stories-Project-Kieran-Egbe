@@ -1,15 +1,8 @@
-import {getQuery, isElementValid }      from "./static/js/utils.js";
-import { FormElements, NavigationElements, PopupElements } from "./static/settings.js";
+import {isElementValid }      from "./static/js/utils.js";
 
-
-const navQuoteLink        = getQuery(NavigationElements.QUOTE_BTN_LINK)
-const quoteBox            = getQuery(NavigationElements.QUOTE_BOX)
-const quotePopupBox       = getQuery(PopupElements.QuoteBox.POPUP_BOX_CLASS_ID);
-const quotePopupCloseIcon = getQuery(PopupElements.QuoteBox.CLOSE_ICON_ID);
-const navSpinner          = getQuery(NavigationElements.SPINNER)
-const subscribeForm       = getQuery(FormElements.SubscribeForm.FORM)
-
-
+const navQuoteLink              = document.querySelector("#quote")
+const quoteBox                  = document.querySelector(".quote-box")
+const quotePopupBox             = document.querySelector(".popup");
 
 
 /**
@@ -28,9 +21,10 @@ function closeQuotePopupBox() {
      * @param {Event} e - The click event object.
      */
     function handlePopupClose(e) {
-        const DURATION = 2000;
 
-        const errorMsg = "The quote box element was not found!!!";
+        const DURATION            = 2000;
+        const errorMsg            = "The quote box element was not found!!!";
+        const quotePopupCloseIcon = document.querySelector("#popup-close-icon");
 
         if (isValid(quotePopupCloseIcon, errorMsg)) {
             quotePopupBox.classList.toggle('show-popup');
@@ -44,6 +38,7 @@ function closeQuotePopupBox() {
      */
     function runEventListener() {
         const errorMsg = "The quote box icon element was not found!!!"
+        const quotePopupCloseIcon = document.querySelector("#popup-close-icon");
         if (isValid(quotePopupCloseIcon, errorMsg)) {
             quotePopupCloseIcon.addEventListener("click", handlePopupClose);
         }
@@ -74,7 +69,10 @@ function submitSubscriptionForm() {
      * Adds a submit event listener to the subscribeForm element, invoking handleSubmission.
      */
     function runEventListener() {
-        const errorMsg = "The subscription form element was not found!!!";
+
+        const subscribeForm  = document.querySelector("#popup-form")
+        const errorMsg       = "The subscription form element was not found!!!";
+
         if (isValid(subscribeForm, errorMsg)) {
             subscribeForm.addEventListener("submit", handleSubmission);
         }
@@ -89,7 +87,7 @@ function submitSubscriptionForm() {
         Swal.fire("Subscription Successful", "You've successfully subscribed to our mailing list!", "success");
         e.target.reset();  
     }
-    
+
     /**
      * Checks the validity of the specified selector element.
      * 
@@ -122,6 +120,8 @@ function handleQuotePopupDisplay() {
 
 
 function handleNavSpinner(duration) {
+
+    const navSpinner                = document.querySelector(".spinner");
     let isSpinnrVisible = true;
     
     hideQuoteButton();
@@ -137,8 +137,6 @@ function handleNavSpinner(duration) {
         }
     }, duration);
 }
-
-
 
 
 function toggleSpinnerVisibility(spinnerElement, shouldShowSpinner = false) {
@@ -189,8 +187,7 @@ function toggleSpinnerVisibility(spinnerElement, shouldShowSpinner = false) {
                 break;
         }
     }
-   
-    
+     
     run();
     
 }
@@ -208,7 +205,64 @@ function hideQuoteButton() {
 
 
 
+function remainingMinimumCharacters(minCharactersToUse, noOfCharsUsed) {
+    return minCharactersToUse - noOfCharsUsed;
+}
+
+function handleMinimumCharString(stringElement, remaingMinChars, minCharactersToUse) {
+
+    const EMPTY_VALUE = ''
+    stringElement.classList.remove("light-red", "black-color", "dark-green");
+    
+    updateMinimumCharacterString(remaingMinChars, stringElement)
+  
+    switch (true) {
+        case remaingMinChars === EMPTY_VALUE:
+            stringElement.classList.add("black-color");
+            break;
+        case remaingMinChars <= EMPTY_VALUE:
+            stringElement.classList.add("dark-green");
+            break;
+        case remaingMinChars < minCharactersToUse:
+            stringElement.classList.add("light-red");
+            break;
+        
+    }
+    
+}
+
+
+function minimumCharactersToUse() {
+   
+    const contactFormTextArea = document.querySelector("#description");
+
+    if (!contactFormTextArea) {
+        console.error("The element was not found!!");
+        return;
+    }
+
+    contactFormTextArea.addEventListener("input", handleEvent, { passive: true });
+
+    function handleEvent(e) {
+        const MIN_CHARACTERS_TO_USE = 50;
+        const noOfCharsUsed         = e.target.value.length;
+        const minCharsUsed          = remainingMinimumCharacters(MIN_CHARACTERS_TO_USE, noOfCharsUsed);
+        const minCharString         = document.querySelector(".minimum-char-string");
+            
+        handleMinimumCharString(minCharString, minCharsUsed, MIN_CHARACTERS_TO_USE);
+      }
+
+}
+
+
+function updateMinimumCharacterString(remaingMinChars, stringElement) {
+    if (remaingMinChars >= 0) {
+        stringElement.textContent = `Minimum characters to use: ${remaingMinChars}`;
+    }
+}
+
 
 closeQuotePopupBox();
 showQuotePopupBox();
-submitSubscriptionForm()
+submitSubscriptionForm();
+minimumCharactersToUse();
