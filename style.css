@@ -121,7 +121,9 @@ button {
   content: '';
   position: absolute;
   width: 100%;
-  height: 140px; /* Allows the curve to be ajusted */
+
+  /* Allows the curve to be adjusted */
+/*   height: 140px;  */
   background-color: white;
   border-radius: 0 0 50% 50%;
 }
