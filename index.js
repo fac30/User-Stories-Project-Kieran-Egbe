@@ -1,4 +1,4 @@
-import {isElementValid }      from "./static/js/utils.js";
+import {isElementValid }  from "./static/js/utils.js";
 
 const navQuoteLink              = document.querySelector("#quote")
 const quoteBox                  = document.querySelector(".quote-box")
