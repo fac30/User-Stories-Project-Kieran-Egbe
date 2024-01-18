@@ -204,10 +204,33 @@ function hideQuoteButton() {
 }
 
 
+function minimumCharactersToUse() {
+   
+    const contactFormTextArea = document.querySelector("#description");
+
+    if (!contactFormTextArea) {
+        console.error("The element was not found!!");
+        return;
+    }
+
+    contactFormTextArea.addEventListener("input", handleEvent, { passive: true });
+
+    function handleEvent(e) {
+        const MIN_CHARACTERS_TO_USE = 50;
+        const noOfCharsUsed         = e.target.value.length;
+        const minCharsUsed          = remainingMinimumCharacters(MIN_CHARACTERS_TO_USE, noOfCharsUsed);
+        const minCharString         = document.querySelector(".minimum-char-string");
+            
+        handleMinimumCharString(minCharString, minCharsUsed, MIN_CHARACTERS_TO_USE);
+      }
+
+}
+
 
 function remainingMinimumCharacters(minCharactersToUse, noOfCharsUsed) {
     return minCharactersToUse - noOfCharsUsed;
 }
+
 
 function handleMinimumCharString(stringElement, remaingMinChars, minCharactersToUse) {
 
@@ -229,29 +252,6 @@ function handleMinimumCharString(stringElement, remaingMinChars, minCharactersTo
         
     }
     
-}
-
-
-function minimumCharactersToUse() {
-   
-    const contactFormTextArea = document.querySelector("#description");
-
-    if (!contactFormTextArea) {
-        console.error("The element was not found!!");
-        return;
-    }
-
-    contactFormTextArea.addEventListener("input", handleEvent, { passive: true });
-
-    function handleEvent(e) {
-        const MIN_CHARACTERS_TO_USE = 50;
-        const noOfCharsUsed         = e.target.value.length;
-        const minCharsUsed          = remainingMinimumCharacters(MIN_CHARACTERS_TO_USE, noOfCharsUsed);
-        const minCharString         = document.querySelector(".minimum-char-string");
-            
-        handleMinimumCharString(minCharString, minCharsUsed, MIN_CHARACTERS_TO_USE);
-      }
-
 }
 
 
