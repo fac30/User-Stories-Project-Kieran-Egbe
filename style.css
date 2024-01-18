@@ -63,13 +63,13 @@ button {
 }
 
 .light-red {
-    color: red;
+    color: red!important;
 }
 
 .black-color{
     color: black;
 }
-/* End of color scheme */
+
 
 
 /* background colors */
@@ -222,7 +222,6 @@ button {
 .padding-left-lg {
     padding-left: 74px;
 }
-/* End of padding elements */
 
 
 
@@ -275,8 +274,6 @@ button {
 
  
 
-/* End of utilies elements */
-
 
 /* The logo */
 
@@ -288,7 +285,6 @@ button {
     color: var(--dodger-blue);
 }
 
-/* the logo ends here */
 
 /* Navbar elements */
 
@@ -380,11 +376,7 @@ button {
 .show-popup {
     top: 70px;
 }
-.hide-popup {
-  
- }
 
-/* End of navigation elements */
   
 .popup-info > p {
     font-size: 1.125rem;
@@ -415,9 +407,10 @@ button {
     background: red;
     transform: rotate(360deg);
 }
+
+
+
 /* Banner elements */
-
-
 
 .banner {
  
@@ -439,7 +432,6 @@ button {
 }
 
 
-/* End of banner elements */
 
 
 /* Buttons elements start here */
@@ -475,7 +467,7 @@ button {
     border: 3px solid green;
     transition: all 3s ease-in-out; 
 }
-/* Buttons elements end here */
+
 
 
 
@@ -615,4 +607,3 @@ the contact us section */
     font-size: 1.125rem;
 }
 
-/* End of contact form section */
