@@ -97,7 +97,43 @@ button {
     background-color: white;
 }
 
-/* End of background color schemes */
+
+
+
+/* background ground image */
+#contact-us {
+  
+  background-image: url("static/img/bg3.jpg"); 
+  
+  
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+  
+  background-color: white;   /* A background color to be used as a fallback */
+  height: auto;
+  position: relative;
+  overflow: hidden;
+
+}
+
+#contact-us::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 140px; /* Allows the curve to be ajusted */
+  background-color: white;
+  border-radius: 0 0 50% 50%;
+}
+
+
+#contact-us::after {
+  bottom: 0;
+}
+
+  
+
+      
 
 
 
@@ -533,7 +569,7 @@ the contact us section */
     /* TODO */
     /* background colors to be decided */
 
-    border-top: 2px solid lavender;
+   
 }
 
 #contact-us > div {
@@ -554,6 +590,7 @@ the contact us section */
 .contact-form  {
     width: 70%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background: white;
     padding: 65px;
     cursor: pointer;
   
