@@ -121,9 +121,7 @@ button {
   content: '';
   position: absolute;
   width: 100%;
-
-  /* Allows the curve to be adjusted */
-/*   height: 140px;  */
+  /* height: 10px;  */
   background-color: white;
   border-radius: 0 0 50% 50%;
 }
@@ -354,9 +352,9 @@ button {
 .nav-links a:hover{
 
     background: white;
-    border-top: 4px solid red;
-    border-bottom: 4px solid red;
-    color: red!important;
+    border-top: 4px solid lavender;
+    border-bottom: 4px solid lavender;
+    color: lightblue!important;
     font-weight: bolder;
     padding-right: 27px;
     padding-left: 27px;
