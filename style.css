@@ -352,8 +352,8 @@ button {
 .nav-links a:hover{
 
     background: white;
-    border-top: 4px solid lavender!important;
-    border-bottom: 4px solid lavender!important;
+    border-top: 4px solid lavender;
+    border-bottom: 4px solid lavender;
     color: lightblue!important;
     font-weight: bolder;
     padding-right: 27px;
@@ -372,6 +372,7 @@ button {
     top: -10000px;
     left: 0;
     right: 0;
+    z-index: 1000000000;
     font-family: var(--primary-font-Roboto-family);
     transition: all 2.5s ease-in-out;
     
