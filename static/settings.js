@@ -41,6 +41,10 @@ const PopupElements = {
 const FormElements = {
     SubscribeForm: {
         FORM: "#popup-form",
+        Button : {
+            SPINNER: "#subscribe-spinner",
+            SUBMIT_BUTTON: ".subscribe-btn",
+        }
     }
 
 }
