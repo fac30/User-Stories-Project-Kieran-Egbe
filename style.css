@@ -526,6 +526,32 @@ a {
     width: 70%;
     margin: auto;
 }
+
+/* center the text in the intro heading */
+.intro-container p b {
+    display: block;
+    text-align: center;
+}
+
+.intro-container h2 h3 {
+    animation: fadeInLeftToRight 1s ease forwards;
+}
+
+@keyframes fadeInLeftToRight {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+h2 {
+    animation: fadeInLeftToRight 8s ease forwards;
+}
+
 /* About team styles */
 
 .container {
@@ -548,33 +574,44 @@ a {
     position: relative;
     width: 400px;
     height: 500px;
+    margin: 10px;   
     flex: 1;
     max-width: 25%;     
     box-sizing: border-box;
     background-color: white;
+    overflow: hidden;
+}
+
+
+.team-member img {
+    max-height: 90%; 
+    width: auto;
+    object-fit: cover;
 }
 
 
 /* Hide the <p> elements by default and set positioning */
 .team-member p {
-    display: none;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust color and opacity as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
     color: white;
     justify-content: center;
     align-items: center;
     display: flex;
     text-align: center;
     padding: 10px;
+    visibility: hidden; /* Hide by default */
+    opacity: 0; /* Hide by default */
+    transition: visibility 0s, opacity 0.5s linear; /* Smooth transition */
 }
 
-/* Show the <p> elements on hover */
 .team-member:hover p {
-    display: flex;
+    visibility: visible; /* Show on hover */
+    opacity: 1; /* Show on hover */
 }
 
 
