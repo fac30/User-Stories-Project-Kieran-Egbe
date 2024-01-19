@@ -9,20 +9,6 @@
  */
 
 
-
-
-/**
- * Retrieve a DOM element using its identifier (ID or class).
- * 
- * @param {string} identifier - The ID or class of the DOM element to retrieve.
- * @returns {HTMLElement|null} - The DOM element with the specified identifier, or null if not found.
- */
-function getQuery(identifier) {
-    return document.querySelector(identifier);
-}
-
-
-
 /**
  * Checks the validity of an HTML element and throws an error if the element is falsy.
  *
@@ -42,13 +28,15 @@ function getQuery(identifier) {
  * }
  */
 function isElementValid(element, errorMsg) {
-    if (!element) {
-        console.log(errorMsg);
-        return false
-    } 
-    return true;
+   
+    if (element) {
+        return true;
+    }
+    console.log(errorMsg);
+    return false;
+    
 }
 
 
 
-export {isElementValid, getQuery}
+export {isElementValid}
