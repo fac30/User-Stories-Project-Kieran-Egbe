@@ -533,9 +533,10 @@ a {
     text-align: center;
 }
 
-.intro-container h2 h3 {
-    animation: fadeInLeftToRight 1s ease forwards;
+.intro-container h2, .intro-container h3 {
+    animation: fadeInLeftToRight 8s ease forwards;
 }
+
 
 @keyframes fadeInLeftToRight {
     from {
@@ -548,9 +549,6 @@ a {
     }
 }
 
-h2 {
-    animation: fadeInLeftToRight 8s ease forwards;
-}
 
 /* About team styles */
 
@@ -612,6 +610,13 @@ h2 {
 .team-member:hover p {
     visibility: visible; /* Show on hover */
     opacity: 1; /* Show on hover */
+}
+
+/* Add animation (fade in the overlay layer) */
+.container h3 {
+    animation: fadeInLeftToRight 8s ease forwards;
+    /* color: blue; Apply blue color */
+    
 }
 
 
