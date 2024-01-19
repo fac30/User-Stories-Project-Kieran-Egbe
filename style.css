@@ -506,6 +506,11 @@ nav {
     padding: 20px;
 }
 
+.button-lg {
+
+    font-size: var(--font-sm);
+    padding: 30px;  
+}
 
 .contact-us-btn {
     border: 1px solid rgba(4, 4, 47, 0.771);
@@ -534,7 +539,17 @@ nav {
 }
 
 
+.read-more-btn {
+    background: var(--dodger-blue);
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+       
+}
 
+.read-more-btn:hover {
+    background: black;
+    color: white;
+}
 
 /* The call to action section */
 .call-to-action>* {
@@ -657,6 +672,151 @@ the contact us section */
     margin-top: 0;
 } */
 
+
+
+/* 
+The testimonials section */
+#testimonials {
+    font-family: var(--primary-font-Roboto-family);
+    background: rgb(152, 190, 203);
+    padding-bottom: 200px;
+}
+
+#testimonials .container {
+    
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: auto;
+    width: 93%;
+
+}
+
+#testimonials h1 {
+    text-transform: capitalize;
+    color:gray;
+    font-weight: bolder;
+}
+.testimony-card {
+    position: relative;
+    background: white;
+    border-radius: 10%;
+    width: 32%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: auto;
+    padding: 48px;
+    margin-bottom: 74px;
+    padding-top: 89px;
+    padding-right: 45px;
+    padding-left: 50px;
+    box-shadow: box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+  }
+
+.testimony-card .body {
+    padding-bottom: 30px;
+}
+
+.testimony-card .body p {
+    cursor: pointer;
+    text-align: left;
+    line-height: 1.7;
+}
+
+.quote-img{
+    border-radius: 50%;
+    background: white;
+    padding: 10px;
+  }
+
+.quote-img-1{
+    position: absolute;
+    top: -12px;
+    left: -25px;
+  
+   
+}
+
+
+.quote-img-2 {
+  position: absolute;
+  top: 91%;
+  right: -3%;
+ 
+
+}
+
+.quote-img-1,
+.quote-img-2 {
+    border: 4px solid lavender;
+    height: auto;
+    color: gray;
+}
+
+.quote-profile-pic {
+    border-radius: 50%;
+    height: 100px;
+    border-top: 4px solid var(--dodger-blue);
+    position: absolute;
+    top: -11%;
+    left: 33%;
+    right: 50%;
+    width: auto;
+  }
+
+
+ .review {
+  display: flex;
+  width: 9%;
+  padding-left: 10px;
+  justify-content: space-evenly;
+  margin-right: 45px;
+}
+
+
+.company-name {
+    text-align: left;
+}
+
+.company-name p:first-child {
+    font-weight: bolder;
+}
+
+
+.intro-section {
+    position: relative;
+}
+
+.intro-section > p {
+    cursor: pointer;
+    font-size: 20px;
+    width: 62%;
+    margin: auto;
+    line-height: 2.2;
+    font-weight: bold;
+    opacity: 0.5;
+  }
+
+.intro-quote-1 {
+    position: absolute;
+    top: -11px;
+    left: 200px;
+    
+    
+  }
+
+.intro-quote-2 {
+  
+    position: absolute;
+    right: 135px;
+     
+}
+
+.intro-quote-1,
+.intro-quote-2 {
+    height: 48px;
+    color: gray;
+}
 /* Visually hidden class for screen reader-only text */
 .visually-hidden {
     position: absolute;
@@ -737,7 +897,6 @@ footer .container p {
 
 
 
-
 .footer-social-img {
     height: 30px;
     width: 30px;
@@ -752,6 +911,7 @@ footer .container p {
     opacity: 0.7;
     transform: rotate(180deg);
 }
+
 
 
 /* The footer links */
