@@ -557,7 +557,6 @@ nav {
     transition: all 3s ease-in-out;
 }
 
-
 .read-more-btn {
     background: var(--dodger-blue);
     font-weight: bold;
@@ -1037,13 +1036,11 @@ footer .container p {
 }
 
 
-
 .footer-img {
     height: 200px;
     transform: translateX(-50px);
     width: 200px;
 }
-
 
 
 .footer-social-img {
@@ -1062,7 +1059,9 @@ footer .container p {
 }
 
 
-
+.app {
+    border: 1px solid white;
+}
 /* The footer links */
 .legal>a,
 .resources>a,
