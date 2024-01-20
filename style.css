@@ -1,1091 +1,337 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200&family=Poppins:wght@200&family=Roboto:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+import { isElementValid } from "./static/js/utils.js";
 
-* {
+const navQuoteLink = document.querySelector("#quote")
+const quoteBox = document.querySelector(".quote-box")
+const quotePopupBox = document.querySelector(".popup");
+const sideBar = document.querySelector(".testimonal-sidebar");
+const closeIcon = document.querySelector(".testimonal-close-icon");
+const readMorespinner = document.querySelector(".readmore-spinner")
 
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    padding: 0;
-    margin: 0;
-    transition: all 0.2s ease-in-out;
-}
+const ERROR_MSG = "The selector was not found"
 
 
 
-:root {
 
-    --box-shadow-primary: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    --container-width: 88%;
-    --dark-blue: rgb(4, 4, 57);
-    --dark-red: rgb(90, 11, 11);
-    --dodger-blue: #1e90ff;
-    --element-height-relative: 70vh;
-    --font-sm: 1.25rem;
-    --light-black: rgba(0, 0, 0, 0.1);
-    --primary-font-Roboto-family: 'Roboto', sans-serif;
-    --secondary-font-2-dancing-script-family: 'Dancing Script', cursive;
-    --secondary-font-Poppins-family: 'Poppins', sans-serif;
-    --tealBlueColor: rgb(19, 98, 124);
-    --tealBlueColor2: rgb(84, 147, 168);
-    --tertiary-font-Libre-family: 'Libre Franklin', sans-serif;
-    --width-sm: 40%;
-    --primary-font-Roboto-family: 'Roboto', sans-serif;
+/**
+ *
+ * When the close icon is clicked the quote popup box's visibility is toggled,
+ * and a navigation spinner is triggered for a duration of X-milliseconds.
+ *
+ * @example
+ * // Call the function to close the open quote popup box.
+ * closeQuotePopupBox();
+ */
+function closeQuotePopupBox() {
 
-}
+    /**
+     * Handles the click event on the quote popup close icon.
+     * @param {Event} e - The click event object.
+     */
+    function handlePopupClose(e) {
 
+        const DURATION = 2000;
+        const errorMsg = "The quote box element was not found!!!";
+        const quotePopupCloseIcon = document.querySelector("#popup-close-icon");
 
-body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
+        if (isValid(quotePopupCloseIcon, errorMsg)) {
+            quotePopupBox.classList.toggle('show-popup');
+            handleNavSpinner(DURATION);
+        }
 
-
-a {
-    color: black;
-    font-family: var(--secondary-font-Poppins-family);
-    text-decoration: none;
-}
-
-button {
-    cursor: pointer;
-}
-
-
-/* width sizes */
-
-.width-sm {
-    width: var(--width-sm);
-}
-
-/* Color scheme styles */
-.blue-color {
-    color: rgb(5, 5, 71);
-}
-
-.dark-green {
-    color: darkgreen;
-}
-
-.white-color {
-    color: white;
-}
-
-.red {
-    color: var(--dark-red);
-}
-
-.light-red {
-    color: red !important;
-}
-
-.black-color {
-    color: black;
-}
-
-
-
-/* background colors */
-.black-bg-color {
-    background-color: black;
-}
-
-/* A type of blue color */
-.dodger-blue-bg-color {
-    background: var(--dodger-blue);
-}
-
-.red-bg-color {
-    background: var(--dark-red);
-}
-
-.ghost-white-bg-color {
-    background: ghostwhite;
-}
-
-.lavender-bg-color {
-    background: lavender;
-}
-
-.white-bg-color {
-    background-color: white;
-}
-
-
-
-
-/* background ground image */
-#contact-us {
-
-    background-image: url("static/img/bg3.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    background-color: white;
-    /* A background color to be used as a fallback */
-    height: auto;
-    position: relative;
-    overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.1);
-
-
-}
-
-#contact-us::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    /* height: 10px;  */
-    background-color: white;
-    border-radius: 0 0 50% 50%;
-}
-
-
-#contact-us::after {
-    bottom: 0;
-}
-
-
-
-
-
-
-
-/* Flex elements */
-
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-space-around {
-    display: flex;
-    justify-content: space-around;
-
-}
-
-.flex-space-between {
-    display: flex;
-    justify-content: space-between;
-    /* flex-wrap: wrap; */
-}
-
-.flex-space-evenly {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-.flex-row {
-    display: flex;
-}
-
-.flex-center {
-    display: flex;
-    justify-content: center;
-}
-/* End of flex elements */
-
-
-
-/* font sizes */
-
-.font-md {
-    font-size: 1.125rem;
-}
-
-
-.font-lg {
-    font-size: 1.2rem;
-}
-
-.font-xl {
-    font-size: 2.1rem;
-}
-
-.font-xxl {
-    font-size: 3.1rem;
-}
-
-.text-captalize {
-    text-transform: capitalize !important;
-}
-
-/* End of font sizes */
-
-
-/* margin sizes */
-.margin-top-sm {
-    margin-top: 20px;
-}
-
-.margin-top-md {
-    margin-top: 60px;
-}
-
-.margin-bottom-lg {
-    margin-bottom: 60px;
-}
-
-.margin-bottom-xlg {
-    margin-bottom: 170px;
-}
-
-.margin-top-lg {
-    margin-top: 100px;
-}
-
-.margin-right-sm {
-    margin-right: 40px;
-}
-
-.margin-top-xl {
-    margin-top: 90px;
-}
-
-.margin-right-xxl {
-    margin-right: 119px;
-}
-
-/* End of margin sizes */
-
-
-/* padding elements */
-.padding-xsm {
-    padding: 10px;
-}
-
-.padding-sm {
-    padding: 20px;
-}
-
-.padding-top-sm {
-    padding-top: 20px;
-}
-
-.padding-top-md {
-    padding-top: 60px;
-}
-
-.padding-bottom-md {
-    padding-bottom: 60px;
-}
-
-.padding-top-xl {
-    padding-top: 165px;
-}
-
-.padding-bottom-lg {
-    padding-bottom: 165px;
-}
-
-.padding-left-lg {
-    padding-left: 74px;
-}
-
-
-
-
-/* Utilies elements */
-
-.active {
-    border-bottom: 4px solid blue;
-    font-weight: bolder;
-    color: blue;
-}
-
-.bold {
-    font-weight: bolder !important;
-}
-
-.box {
-    border: 1px solid wheat;
-    padding: 10px;
-    background: blue;
-}
-
-.center-text {
-    text-align: center;
-}
-
-.lifted {
-    transform: translateY(-10px);
-}
-
-.text-upper {
-    text-transform: uppercase;
-}
-
-.text-left-align {
-    text-align: left;
-}
-
-
-.text-right-align {
-    text-align: right;
-}
-
-.right-align {
-
-    display: flex;
-    align-items: inherit;
-    justify-content: flex-end;
-
-}
-
-
-
-
-/* The logo */
-
-.logo {
-    font-family: var(--secondary-font-2-dancing-script-family);
-}
-
-.logo:hover {
-    color: var(--dodger-blue);
-}
-
-
-/* Navbar elements */
-
-nav {
-    position: fixed;
-    width: 100%;
-    z-index: 10000000000;
-}
-
-.nav-container {
-    padding-bottom: 1px;
-    padding-top: 20px;
-
-}
-
-.nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-}
-
-.nav-links a {
-    display: flex;
-    gap: 40px;
-}
-
-.nav-links>a:focus {
-    border: 1px solid white;
-    border-bottom: 4px solid white;
-    font-weight: bolder;
-    padding-right: 27px;
-    padding-left: 27px;
-    padding-top: 10px;
-}
-
-.nav-links a:hover {
-
-    background: white;
-    border-top: 4px solid lavender;
-    border-bottom: 4px solid lavender;
-    color: lightblue !important;
-    font-weight: bolder;
-    padding-right: 27px;
-    padding-left: 27px;
-    /* padding-top: 1px; */
-
-}
-
-.popup {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    cursor: pointer;
-    height: auto;
-    position: fixed;
-    width: 65%;
-    margin: auto;
-    top: -10000px;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    font-family: var(--primary-font-Roboto-family);
-    transition: all 2.5s ease-in-out;
-
-
-}
-
-.popup:hover {
-    opacity: 0.97;
-}
-
-
-.popup>.container {
-    display: flex;
-    background: lavender;
-}
-
-.popup-img {
-    height: 400px;
-    width: 400px;
-    border-right: 2px solid lavender;
-
-}
-
-.popup-info {
-    width: 100%;
-}
-
-.popup-info-title {
-    color: var(--dark-red);
-}
-
-.popup-info>p {
-    padding-top: 30px;
-}
-
-.popup-info>p:last-child {
-    padding-bottom: 30px;
-}
-
-.show-popup {
-    top: 70px;
-}
-
-
-.popup-info>p {
-    font-size: 1.125rem;
-    line-height: 1.6;
-}
-
-.popup-input-field {
-    width: 100%;
-    font-size: 1.2rem;
-}
-
-.popup-close-icon {
-
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 50%;
-    border: 1px solid red;
-    padding: 10px;
-    background: var(--dark-blue);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-
-}
-
-.popup-close-icon:hover {
-    background: red;
-    transform: rotate(360deg);
-}
-
-
-
-/* Banner elements */
-
-.banner {
-
-    background: linear-gradient(-16deg, lavender 51%, white 48%, white), lavender;
-    border-bottom: 4px solid lavender;
-    border-right: 5px lavender;
-    border-right: 40px solid lavender;
-    height: auto;
-
-}
-
-.banner-container {
-    border-bottom: 4px lavender;
-}
-
-.banner-img {
-    height: 75vh;
-    width: 100%;
-}
-
-
-
-
-/* Buttons elements start here */
-
-.button-md {
-    border: 1px solid black;
-    padding: 20px;
-}
-
-.button-lg {
-
-    font-size: var(--font-sm);
-    padding: 30px;  
-}
-
-.contact-us-btn {
-    border: 1px solid rgba(4, 4, 47, 0.771);
-}
-
-.learn-more-btn:hover {
-    background: white;
-    color: black;
-    border: lavender;
-    border: 4px solid lavender;
-    transition: all 3s ease-in-out;
-
-}
-
-.learn-more-btn {
-    color: white;
-    font-weight: bolder;
-}
-
-
-.contact-us-btn:hover {
-    background: black;
-    color: white;
-    border: 3px solid green;
-    transition: all 3s ease-in-out;
-}
-
-.read-more-btn {
-    background: var(--dodger-blue);
-    font-weight: bold;
-    box-shadow: var(--box-shadow-primary);
-       
-}
-
-.read-more-btn:hover {
-    background: #8989db;
-    color: black;
-}
-
-/* The call to action section */
-.call-to-action>* {
-    display: flex;
-    flex-wrap: wrap;
-    font-family: var(--secondary-font-Poppins-family);
-}
-
-
-.call-to-action p {
-    line-height: 2;
-    text-transform: capitalize;
-}
-
-.subscribe-btn:hover {
-    background: var(--dodger-blue);
-}
-
-/* End call of action elements */
-
-
-
-.agency-title {
-    font-family: var(--primary-font-Roboto-family);
-}
-
-.get-quote:hover {
-    background: orange;
-    border: 1px solid black;
-    cursor: pointer;
-    font-weight: bolder;
-    transition: all 1s ease-in-out;
-
-
-}
-
-blockquote {
-    font-family: var(--secondary-font-Poppins-family);
-}
-
-figure blockquote p {
-    font-size: 1.7rem;
-}
-
-/* the spinner elements */
-
-.spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-top: 4px solid white;
-    border-radius: 50%;
-    display: none;
-    width: 20px;
-    height: 20px;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
     }
 
-    100% {
-        transform: rotate(360deg);
+    /**
+     * Runs an event listener on the quote popup close icon, triggering a specified action when clicked
+     */
+    function runEventListener() {
+        const errorMsg = "The quote box icon element was not found!!!"
+        const quotePopupCloseIcon = document.querySelector("#popup-close-icon");
+        if (isValid(quotePopupCloseIcon, errorMsg)) {
+            quotePopupCloseIcon.addEventListener("click", handlePopupClose);
+        }
+    }
+
+    /**
+     * Takes a selector element and checks the validity of the element.
+     * @returns {boolean} Returns true if the element is valid, otherwise returns false.
+     */
+    function isValid(selectorElement, errorMsg) {
+        return isElementValid(selectorElement, errorMsg);
+    }
+
+    runEventListener();
+}
+
+
+/**
+ * Submits the subscription form but ensures the validity of the subscription form 
+ * 
+ * @example
+ * submitSubscriptionForm();
+ */
+function submitSubscriptionForm() {
+
+    /**
+     * Sets up an event listener for the subscription form submission.
+     * Adds a submit event listener to the subscribeForm element, invoking handleSubmission.
+     */
+    function runEventListener() {
+
+        const subscribeForm = document.querySelector("#popup-form")
+        const errorMsg = "The subscription form element was not found!!!";
+
+        if (isValid(subscribeForm, errorMsg)) {
+            subscribeForm.addEventListener("submit", handleSubmission);
+        }
+    }
+
+    /**
+     * Handles the submission of the form
+     * @param {e} event parameter
+     */
+    function handleSubmission(e) {
+        e.preventDefault();
+        Swal.fire("Subscription Successful", "You've successfully subscribed to our mailing list!", "success");
+        e.target.reset();
+    }
+
+    /**
+     * Checks the validity of the specified selector element.
+     * 
+     * @param {HTMLElement} selectorElement - The HTML element to validate.
+     * @param {string} errorMsg - The error message to be logged if the element is not valid.
+     * @returns {boolean} Returns true if the element is valid, otherwise returns false.
+     */
+    function isValid(selectorElement, errorMsg) {
+        return isElementValid(selectorElement, errorMsg);
+    }
+
+
+    runEventListener();
+}
+
+
+
+
+function showQuotePopupBox() {
+    navQuoteLink.addEventListener("click", handleQuotePopupDisplay);
+}
+
+
+function handleQuotePopupDisplay(e) {
+    e.preventDefault();
+    const DURATION = 3000;
+    quotePopupBox.classList.add('show-popup');
+    handleNavSpinner(DURATION)
+
+}
+
+
+function handleNavSpinner(duration) {
+
+    const navSpinner = document.querySelector(".spinner");
+    let isSpinnrVisible = true;
+
+    hideQuoteButton();
+    toggleSpinnerVisibility(navSpinner, true);
+
+    setTimeout(() => {
+
+        toggleSpinnerVisibility(navSpinner, false)
+        isSpinnrVisible = false;
+
+        if (!isSpinnrVisible) {
+            showQuoteButton();
+        }
+    }, duration);
+}
+
+
+function toggleSpinnerVisibility(spinnerElement, shouldShowSpinner = false) {
+
+    /**
+     * Shows the spinner by setting display style to "flex".
+     */
+    function showSpinner() {
+        updateSpinnerVisibility("flex");
+    }
+
+    /**
+     * Hides the spinner by setting display style to "none".
+     */
+    function hideSpinner() {
+        updateSpinnerVisibility("none");
+    }
+
+    /**
+     * Updates the spinner visibility based on the provided display style.
+     * @param {string} displayStyle - The display style for the spinner.
+     */
+    function updateSpinnerVisibility(displayStyle) {
+        if (isValid()) {
+            spinnerElement.style.display = displayStyle;
+        };
+
+    }
+
+    /**
+     * Checks if the spinner element is valid.
+     * Throws an error if the spinner element is not found.
+     * @param {HTMLElement} spinnerElement - The spinner element.
+     * @returns {boolean} - True if the spinner element is valid.
+     */
+    function isValid() {
+        const errorMsg = "The spinner element was not found";
+        return isElementValid(spinnerElement, errorMsg)
+    }
+
+    function run() {
+        switch (shouldShowSpinner) {
+            case true:
+                showSpinner();
+                break;
+            case false:
+                hideSpinner();
+                break;
+        }
+    }
+
+    run();
+
+}
+
+
+
+
+function showQuoteButton() {
+    quoteBox.style.display = "flex";
+}
+
+function hideQuoteButton() {
+    quoteBox.style.display = "none";
+}
+
+
+function minimumCharactersToUse() {
+
+    const contactFormTextArea = document.querySelector("#description");
+
+    if (!contactFormTextArea) {
+        console.error("The element was not found!!");
+        return;
+    }
+
+    contactFormTextArea.addEventListener("input", handleEvent, { passive: true });
+
+    function handleEvent(e) {
+        const MIN_CHARACTERS_TO_USE = 50;
+        const noOfCharsUsed = e.target.value.length;
+        const minCharsUsed = remainingMinimumCharacters(MIN_CHARACTERS_TO_USE, noOfCharsUsed);
+        const minCharString = document.querySelector(".minimum-char-string");
+
+        handleMinimumCharString(minCharString, minCharsUsed, MIN_CHARACTERS_TO_USE);
+    }
+
+}
+
+
+function remainingMinimumCharacters(minCharactersToUse, noOfCharsUsed) {
+    return minCharactersToUse - noOfCharsUsed;
+}
+
+
+function handleMinimumCharString(stringElement, remaingMinChars, minCharactersToUse) {
+
+    const EMPTY_VALUE = ''
+    stringElement.classList.remove("light-red", "black-color", "dark-green");
+
+    updateMinimumCharacterString(remaingMinChars, stringElement)
+
+    switch (true) {
+        case remaingMinChars === EMPTY_VALUE:
+            stringElement.classList.add("black-color");
+            break;
+        case remaingMinChars <= EMPTY_VALUE:
+            stringElement.classList.add("dark-green");
+            break;
+        case remaingMinChars < minCharactersToUse:
+            stringElement.classList.add("light-red");
+            break;
+
+    }
+
+}
+
+
+function updateMinimumCharacterString(remaingMinChars, stringElement) {
+    if (remaingMinChars >= 0) {
+        stringElement.textContent = `Minimum characters to use: ${remaingMinChars}`;
     }
 }
 
-/* end of spinner elements */
-
-/* 
-the contact us section */
+function closeTestimonalSideBar() {
 
 
 
-#contact-us>div {
-    width: var(--container-width);
-    margin: auto;
-    font-family: var(--secondary-font-Poppins-family);
-    font-weight: 900;
-    /* padding-top: 100px; */
+    const isCloseIconValid = isElementValid(closeIcon, ERROR_MSG);
+    const isSideBarValid = isElementValid(sideBar, ERROR_MSG);
+
+    if (isCloseIconValid && isSideBarValid) {
+        closeIcon.classList.toggle("rotateIcon");
+
+        closeIcon.addEventListener("click", () => {
+            handleCloseSideBar(closeIcon, sideBar);
+        });
+    }
 }
 
+function handleCloseSideBar(closeIcon, sideBar) {
+    const animationDuration = 100;
+    const closeWidth = 0;
 
+    setTimeout(() => {
+        sideBar.style.width = closeWidth;
+        closeIcon.style.display = "none";
+        readMorespinner.style.display = "none";
 
-.contact-msg>p {
-    width: 95%;
-    line-height: 1.7;
-}
-
-.contact-form {
-    width: 70%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    background: white;
-    padding: 65px;
-    cursor: pointer;
-
-}
-
-
-
-
-#contact-form>input[type="text"],
-#contact-form>input[type="number"],
-#contact-form>input[type="email"],
-#contact-form>textarea,
-#contact-form>select {
-    background: ghostwhite;
-    font-family: var(--primary-font-Roboto-family);
-    border: 2px solid lavender;
-    font-size: var(--font-sm);
-}
-
-#contact-form>input[type="text"],
-#contact-form>input[type="number"],
-#contact-form>input[type="email"],
-#contact-form>select {
-    height: 40px;
-}
-
-#contact-form>label {
-    margin-top: 10px;
-    text-transform: capitalize;
-}
-
-
-/* #contact-form-number  {
-    padding-top: 0;
-    margin-top: 0;
-} */
-
-
-
-/* 
-The testimonials section */
-
-
-.testimonal-close-icon.rotateIcon {
-    transform: rotate(360deg);
-    transition: transform 20s;
-}
-
-.testimonal-close-icon {
-    height: 50px;
-    width: 50px;
-    position: fixed;
-    right: 0;
-    cursor: pointer;
-    display: none;
-}
-#testimonials {
-    font-family: var(--primary-font-Roboto-family);
-    background: rgb(152, 190, 203);
-    padding-bottom: 200px;
-}
-
-.testimonal-close-icon:hover {
-    transform: rotate(360deg);
-}
-
-#testimonials .container {
-    
-    display: flex;
-    flex-wrap: wrap;
-
-    margin: auto;
-    width: 93%;
+    }, animationDuration);
 
 }
 
-#testimonials h1 {
-    text-transform: capitalize;
-    color:gray;
-    font-weight: bolder;
-}
-.testimony-card {
-    position: relative;
-    background: white;
-    border-radius: 10%;
-    width: 32%;
-    text-align: center;
-    margin: auto;
-    margin-bottom: auto;
-    padding: 48px;
-    margin-bottom: 74px;
-    padding-top: 89px;
-    padding-right: 45px;
-    padding-left: 50px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
+function openReadMoreSideBar() {
+    const readMoreButton = document.querySelector(".read-more-btn");
+    const WIDTH_SIZE = "60%"
 
-.testimony-card .body {
-    padding-bottom: 30px;
-}
+    const isREadMoreValid = isElementValid(readMoreButton, ERROR_MSG);
+    const isSideBarValid = isElementValid(sideBar, ERROR_MSG);
+    const isCloseIconValid = isElementValid(closeIcon, ERROR_MSG);
+    const isReadMoreSpinnerValid = isElementValid(readMorespinner, ERROR_MSG)
 
-.testimony-card .body p {
-    cursor: pointer;
-    text-align: left;
-    line-height: 1.7;
-}
+    if (isREadMoreValid && isSideBarValid && isCloseIconValid && isReadMoreSpinnerValid) {
 
-.testimonal-sidebar  {
-    width: 0;
-    position: fixed;
-    top: 60px;
-    right: 0;
-    bottom: 0;
-    background: white;
-    background: lavender;
-    height: 100%;
-    overflow-y: scroll;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    font-family: var(--secondary-font-Poppins-family);
-  }
+        readMoreButton.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            readMorespinner.style.display = "inline-flex";
+
+            setTimeout(() => {
+                sideBar.style.width = WIDTH_SIZE;
+                closeIcon.style.display = "flex";
+            }, 2000)
 
 
+        })
 
-.testimonal-sidebar .container .testimony-card {
-    position: relative;
-    background: white;
-    width: 90%;
-    text-align: center;
-    margin: auto;
-    margin-bottom: auto;
-    padding: 26px;
-    margin-bottom: 42px;
-    padding-top: 91px;
-    border-radius: 0;
-    height: auto;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.testimonal-sidebar .container .testimony-card .review {
-    display: flex;
-    width: 18%;
-    padding-left: 10px;
-    justify-content: space-evenly;
-    margin-right: 70px;
-
-   
-  }
-
-  @supports (-moz-appearance: none) {
-
-    /* Firefox-specific styles because it works differently in firefox and chrome */
-    .testimonal-sidebar .container .testimony-card .review {
-        width: 5%;
     }
 }
 
 
-  .testimonal-sidebar .container .testimony-card .quote-profile-pic {
-        border-radius: 50%;
-        height: 100px;
-        border-top: 4px solid var(--dodger-blue);
-        position: absolute;
-        top: -11%;
-        left: 41%;
-        right: 50%;
-        width: 100px;
-      
-  }
-
-.quote-img{
-    border-radius: 50%;
-    background: white;
-    padding: 10px;
-  }
-
-.quote-img-1{
-    position: absolute;
-    top: -12px;
-    left: -25px;
-  
-   
-}
-
-
-.quote-img-2 {
-  position: absolute;
-  top: 91%;
-  right: -3%;
- 
-
-}
-
-.quote-img-1,
-.quote-img-2 {
-    border: 4px solid lavender;
-    height: auto;
-    color: gray;
-}
-
-.quote-profile-pic {
-    border-radius: 50%;
-    height: 100px;
-    border-top: 4px solid var(--dodger-blue);
-    position: absolute;
-    top: -11%;
-    left: 33%;
-    right: 50%;
-    width: 100px;
-  }
-
-
- .review {
-  display: flex;
-  width: 9%;
-  padding-left: 10px;
-  justify-content: space-evenly;
-  margin-right: 45px;
-}
-
-
-.company-name {
-    text-align: left;
-}
-
-.company-name p:first-child {
-    font-weight: bolder;
-}
-
-
-.intro-section {
-    position: relative;
-}
-
-.intro-section > p {
-    cursor: pointer;
-    font-size: 20px;
-    width: 62%;
-    margin: auto;
-    line-height: 2.2;
-    font-weight: bold;
-    opacity: 0.5;
-  }
-
-.intro-quote-1 {
-    position: absolute;
-    top: -11px;
-    left: 200px;
-    
-    
-  }
-
-.intro-quote-2 {
-  
-    position: absolute;
-    right: 135px;
-     
-}
-
-.intro-quote-1,
-.intro-quote-2 {
-    height: 48px;
-    color: gray;
-}
-
-.testimony-card:hover {
-    opacity: 0.8;
-}
-
-.readmore-spinner {
-    display: none;
-    height: 20px;
-    width: 20px;
-    background: lightblue;
-}
-
-/* Visually hidden class for screen reader-only text */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-}
-
-.contact-msg>p {
-    font-size: 1.125rem;
-}
-
-
-/* the footer starts herea */
-footer .container a {
-    color: white;
-    text-transform: capitalize;
-}
-
-.footer .container h3,
-h4 {
-    text-transform: capitalize;
-}
-
-.footer .container h3,
-h4,
-p {
-    cursor: pointer;
-}
-
-.footer .container h3,
-h4 {
-    color: lightblue;
-}
-
-
-footer .container h4 {
-    margin-bottom: 1px;
-}
-
-footer .container {
-
-    font-family: var(--secondary-font-Poppins-family);
-    margin: auto;
-    width: 90%;
-}
-
-footer .container div {
-    padding-top: 10px;
-}
-
-
-footer .container p:hover,
-footer .container a:hover {
-    color: lightblue;
-}
-
-footer .container h3 {
-    color: var(--dodger-blue);
-}
-
-footer .container a,
-footer .container p {
-    font-size: 0.9rem;
-}
-
-
-.footer-img {
-    height: 200px;
-    transform: translateX(-50px);
-    width: 200px;
-}
-
-
-.footer-social-img {
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-    opacity: 0.8;
-}
 
 
 
-.footer-social-img:hover {
-    transform: scale(1.1);
-    opacity: 0.7;
-    transform: rotate(180deg);
-}
-
-
-.app {
-    border: 1px solid white;
-}
-/* The footer links */
-.legal>a,
-.resources>a,
-.policies>a,
-.community>a {
-    padding-top: 10px;
-}
-
-/* quote */
-.quote {
-    background: var(--tealBlueColor);
-    border-top: 3px solid var(--tealBlueColor);
-
-}
-
-.quote2 {
-    background: var(--tealBlueColor2);
-
-}
-
-.quote,
-.quote2 {
-    cursor: pointer;
-    opacity: 0.7;
-}
-
-.quote:hover,
-.quote2:hover {
-    opacity: 0.6;
-}
-
-q {
-    display: block;
-    font-family: var(--secondary-font-Poppins-family);
-    font-size: 1.45rem;
-    color: white;
-}
-
-/* Copy right */
-.copyright {
-    height: 90px;
-    background: rgb(25, 24, 24);
-    font-family: var(--secondary-font-Poppins-family);
-}
-
-
-.pagination > a {
-    color: black;
-    font-family: var(--secondary-font-Poppins-family);
-    text-decoration: none;
-    /* border: 1px solid; */
-    padding: 8px;
-    font-family: var(--primary-font-Roboto-family);
-    font-weight: bold;
-  }
-
-  .pagination > a:nth-child(even) {
-    background: lightblue;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  .pagination > a:nth-child(odd) {
-    background: var(--dodger-blue);
-    color: white;
-  }
-
-  .pagination > a:hover {
-    transform: scale(1.1);
-  }
+closeQuotePopupBox();
+showQuotePopupBox();
+submitSubscriptionForm();
+minimumCharactersToUse();
+closeTestimonalSideBar();
+openReadMoreSideBar();
