@@ -1069,20 +1069,20 @@ q {
     color: black;
     font-family: var(--secondary-font-Poppins-family);
     text-decoration: none;
-    border: 1px solid;
-    padding: 15px;
+    /* border: 1px solid; */
+    padding: 8px;
     font-family: var(--primary-font-Roboto-family);
     font-weight: bold;
   }
 
   .pagination > a:nth-child(even) {
-    background: white;
+    background: lightblue;
     font-weight: bold;
     cursor: pointer;
   }
 
   .pagination > a:nth-child(odd) {
-    background: black;
+    background: var(--dodger-blue);
     color: white;
   }
 
