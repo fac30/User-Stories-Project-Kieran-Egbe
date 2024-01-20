@@ -787,7 +787,7 @@ The testimonials section */
 
 .testimonal-sidebar .container .testimony-card .review  {
     display: flex;
-    width: 15%;
+    width: 35px;
     padding-left: 10px;
     justify-content: space-evenly;
     margin-right: 70px;
