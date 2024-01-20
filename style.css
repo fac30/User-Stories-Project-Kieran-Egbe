@@ -785,14 +785,23 @@ The testimonials section */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.testimonal-sidebar .container .testimony-card .review  {
+.testimonal-sidebar .container .testimony-card .review {
     display: flex;
-    width: 35px;
+    width: 18%;
     padding-left: 10px;
     justify-content: space-evenly;
     margin-right: 70px;
+
+   
   }
 
+  @supports (-moz-appearance: none) {
+
+    /* Firefox-specific styles because it works differently in firefox and chrome */
+    .testimonal-sidebar .container .testimony-card .review {
+        width: 5%;
+    }
+}
 
 
   .testimonal-sidebar .container .testimony-card .quote-profile-pic {
