@@ -1180,7 +1180,7 @@ q {
 .message-us-icon-close {
     height: 60px;
     cursor: pointer;
-    border: 4px solid var(--dodger-blue);
+    border: 1px solid var(--dodger-blue);
     position: fixed;
     bottom: 0;
     background: white;
