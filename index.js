@@ -1,8 +1,15 @@
-import {isElementValid }  from "./static/js/utils.js";
+import { isElementValid } from "./static/js/utils.js";
 
-const navQuoteLink              = document.querySelector("#quote")
-const quoteBox                  = document.querySelector(".quote-box")
-const quotePopupBox             = document.querySelector(".popup");
+const navQuoteLink = document.querySelector("#quote")
+const quoteBox = document.querySelector(".quote-box")
+const quotePopupBox = document.querySelector(".popup");
+const sideBar = document.querySelector(".testimonal-sidebar");
+const closeIcon = document.querySelector(".testimonal-close-icon");
+const readMorespinner = document.querySelector(".readmore-spinner")
+
+const ERROR_MSG = "The selector was not found"
+
+
 
 
 /**
@@ -22,15 +29,15 @@ function closeQuotePopupBox() {
      */
     function handlePopupClose(e) {
 
-        const DURATION            = 2000;
-        const errorMsg            = "The quote box element was not found!!!";
+        const DURATION = 2000;
+        const errorMsg = "The quote box element was not found!!!";
         const quotePopupCloseIcon = document.querySelector("#popup-close-icon");
 
         if (isValid(quotePopupCloseIcon, errorMsg)) {
             quotePopupBox.classList.toggle('show-popup');
             handleNavSpinner(DURATION);
         }
-      
+
     }
 
     /**
@@ -63,21 +70,21 @@ function closeQuotePopupBox() {
  * submitSubscriptionForm();
  */
 function submitSubscriptionForm() {
-    
+
     /**
      * Sets up an event listener for the subscription form submission.
      * Adds a submit event listener to the subscribeForm element, invoking handleSubmission.
      */
     function runEventListener() {
 
-        const subscribeForm  = document.querySelector("#popup-form")
-        const errorMsg       = "The subscription form element was not found!!!";
+        const subscribeForm = document.querySelector("#popup-form")
+        const errorMsg = "The subscription form element was not found!!!";
 
         if (isValid(subscribeForm, errorMsg)) {
             subscribeForm.addEventListener("submit", handleSubmission);
         }
     }
-   
+
     /**
      * Handles the submission of the form
      * @param {e} event parameter
@@ -85,7 +92,7 @@ function submitSubscriptionForm() {
     function handleSubmission(e) {
         e.preventDefault();
         Swal.fire("Subscription Successful", "You've successfully subscribed to our mailing list!", "success");
-        e.target.reset();  
+        e.target.reset();
     }
 
     /**
@@ -111,19 +118,20 @@ function showQuotePopupBox() {
 }
 
 
-function handleQuotePopupDisplay() {
+function handleQuotePopupDisplay(e) {
+    e.preventDefault();
     const DURATION = 3000;
     quotePopupBox.classList.add('show-popup');
     handleNavSpinner(DURATION)
-  
+
 }
 
 
 function handleNavSpinner(duration) {
 
-    const navSpinner                = document.querySelector(".spinner");
+    const navSpinner = document.querySelector(".spinner");
     let isSpinnrVisible = true;
-    
+
     hideQuoteButton();
     toggleSpinnerVisibility(navSpinner, true);
 
@@ -163,7 +171,7 @@ function toggleSpinnerVisibility(spinnerElement, shouldShowSpinner = false) {
         if (isValid()) {
             spinnerElement.style.display = displayStyle;
         };
-       
+
     }
 
     /**
@@ -187,9 +195,9 @@ function toggleSpinnerVisibility(spinnerElement, shouldShowSpinner = false) {
                 break;
         }
     }
-     
+
     run();
-    
+
 }
 
 
@@ -200,12 +208,12 @@ function showQuoteButton() {
 }
 
 function hideQuoteButton() {
-    quoteBox.style.display = "none"; 
+    quoteBox.style.display = "none";
 }
 
 
 function minimumCharactersToUse() {
-   
+
     const contactFormTextArea = document.querySelector("#description");
 
     if (!contactFormTextArea) {
@@ -217,12 +225,12 @@ function minimumCharactersToUse() {
 
     function handleEvent(e) {
         const MIN_CHARACTERS_TO_USE = 50;
-        const noOfCharsUsed         = e.target.value.length;
-        const minCharsUsed          = remainingMinimumCharacters(MIN_CHARACTERS_TO_USE, noOfCharsUsed);
-        const minCharString         = document.querySelector(".minimum-char-string");
-            
+        const noOfCharsUsed = e.target.value.length;
+        const minCharsUsed = remainingMinimumCharacters(MIN_CHARACTERS_TO_USE, noOfCharsUsed);
+        const minCharString = document.querySelector(".minimum-char-string");
+
         handleMinimumCharString(minCharString, minCharsUsed, MIN_CHARACTERS_TO_USE);
-      }
+    }
 
 }
 
@@ -236,9 +244,9 @@ function handleMinimumCharString(stringElement, remaingMinChars, minCharactersTo
 
     const EMPTY_VALUE = ''
     stringElement.classList.remove("light-red", "black-color", "dark-green");
-    
+
     updateMinimumCharacterString(remaingMinChars, stringElement)
-  
+
     switch (true) {
         case remaingMinChars === EMPTY_VALUE:
             stringElement.classList.add("black-color");
@@ -249,9 +257,9 @@ function handleMinimumCharString(stringElement, remaingMinChars, minCharactersTo
         case remaingMinChars < minCharactersToUse:
             stringElement.classList.add("light-red");
             break;
-        
+
     }
-    
+
 }
 
 
@@ -261,8 +269,69 @@ function updateMinimumCharacterString(remaingMinChars, stringElement) {
     }
 }
 
+function closeTestimonalSideBar() {
+
+
+
+    const isCloseIconValid = isElementValid(closeIcon, ERROR_MSG);
+    const isSideBarValid = isElementValid(sideBar, ERROR_MSG);
+
+    if (isCloseIconValid && isSideBarValid) {
+        closeIcon.classList.toggle("rotateIcon");
+
+        closeIcon.addEventListener("click", () => {
+            handleCloseSideBar(closeIcon, sideBar);
+        });
+    }
+}
+
+function handleCloseSideBar(closeIcon, sideBar) {
+    const animationDuration = 100;
+    const closeWidth = 0;
+
+    setTimeout(() => {
+        sideBar.style.width = closeWidth;
+        closeIcon.style.display = "none";
+        readMorespinner.style.display = "none";
+
+    }, animationDuration);
+
+}
+
+function openReadMoreSideBar() {
+    const readMoreButton = document.querySelector(".read-more-btn");
+    const WIDTH_SIZE = "60%"
+
+    const isREadMoreValid = isElementValid(readMoreButton, ERROR_MSG);
+    const isSideBarValid = isElementValid(sideBar, ERROR_MSG);
+    const isCloseIconValid = isElementValid(closeIcon, ERROR_MSG);
+    const isReadMoreSpinnerValid = isElementValid(readMorespinner, ERROR_MSG)
+
+    if (isREadMoreValid && isSideBarValid && isCloseIconValid && isReadMoreSpinnerValid) {
+
+        readMoreButton.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            readMorespinner.style.display = "inline-flex";
+
+            setTimeout(() => {
+                sideBar.style.width = WIDTH_SIZE;
+                closeIcon.style.display = "flex";
+            }, 2000)
+
+
+        })
+
+    }
+}
+
+
+
+
 
 closeQuotePopupBox();
 showQuotePopupBox();
 submitSubscriptionForm();
 minimumCharactersToUse();
+closeTestimonalSideBar();
+openReadMoreSideBar();
