@@ -14,20 +14,22 @@
 
 :root {
 
+    --box-shadow-primary: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    --container-width: 88%;
+    --dark-blue: rgb(4, 4, 57);
+    --dark-red: rgb(90, 11, 11);
     --dodger-blue: #1e90ff;
     --element-height-relative: 70vh;
-    --primary-font-Roboto-family: 'Roboto', sans-serif;
-    --secondary-font-Poppins-family: 'Poppins', sans-serif;
-    --tertiary-font-Libre-family: 'Libre Franklin', sans-serif;
-    --secondary-font-2-dancing-script-family: 'Dancing Script', cursive;
-    --dark-red: rgb(90, 11, 11);
-    --dark-blue: rgb(4, 4, 57);
-    --container-width: 88%;
     --font-sm: 1.25rem;
+    --light-black: rgba(0, 0, 0, 0.1);
+    --primary-font-Roboto-family: 'Roboto', sans-serif;
+    --secondary-font-2-dancing-script-family: 'Dancing Script', cursive;
+    --secondary-font-Poppins-family: 'Poppins', sans-serif;
     --tealBlueColor: rgb(19, 98, 124);
     --tealBlueColor2: rgb(84, 147, 168);
-    --light-black: rgba(0, 0, 0, 0.1);
+    --tertiary-font-Libre-family: 'Libre Franklin', sans-serif;
     --width-sm: 40%;
+    --primary-font-Roboto-family: 'Roboto', sans-serif;
 
 }
 
@@ -146,9 +148,6 @@ button {
 
 
 
-
-
-
 /* Flex elements */
 
 .flex-column {
@@ -178,6 +177,10 @@ button {
     display: flex;
 }
 
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
 /* End of flex elements */
 
 
@@ -277,6 +280,9 @@ button {
     padding-left: 74px;
 }
 
+.padding-left-sm {
+    padding-left: 30px;
+}
 
 
 
@@ -474,7 +480,6 @@ nav {
 }
 
 
-
 /* Banner elements */
 
 .banner {
@@ -506,6 +511,11 @@ nav {
     padding: 20px;
 }
 
+.button-lg {
+
+    font-size: var(--font-sm);
+    padding: 30px;  
+}
 
 .contact-us-btn {
     border: 1px solid rgba(4, 4, 47, 0.771);
@@ -533,8 +543,17 @@ nav {
     transition: all 3s ease-in-out;
 }
 
+.read-more-btn {
+    background: var(--dodger-blue);
+    font-weight: bold;
+    box-shadow: var(--box-shadow-primary);
+       
+}
 
-
+.read-more-btn:hover {
+    background: #8989db;
+    color: black;
+}
 
 /* The call to action section */
 .call-to-action>* {
@@ -571,6 +590,13 @@ nav {
 
 }
 
+blockquote {
+    font-family: var(--secondary-font-Poppins-family);
+}
+
+figure blockquote p {
+    font-size: 1.7rem;
+}
 
 /* the spinner elements */
 
@@ -627,7 +653,6 @@ the contact us section */
 
 
 
-
 #contact-form>input[type="text"],
 #contact-form>input[type="number"],
 #contact-form>input[type="email"],
@@ -651,11 +676,277 @@ the contact us section */
     text-transform: capitalize;
 }
 
+#contact-form .label  {
+    padding-top: 3px;
+}
+
+
+.contact-label-icon {
+    height: 20px;
+}
+/* hide the icons */
+
+.title-icon,
+.email-icon,
+.company-icon,
+.number-icon,
+.country-icon,
+.contact-number-icon,
+.contact-us-icon {
+    display: none;
+}
+
+
+
+
+#contact-form-number {
+    display: none;
+}
+
 
 /* #contact-form-number  {
     padding-top: 0;
     margin-top: 0;
 } */
+
+
+
+/* 
+The testimonials section */
+
+
+.testimonal-close-icon.rotateIcon {
+    transform: rotate(360deg);
+    transition: transform 20s;
+}
+
+.testimonal-close-icon {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 0;
+    cursor: pointer;
+    display: none;
+}
+#testimonials {
+    font-family: var(--primary-font-Roboto-family);
+    background: rgb(152, 190, 203);
+    padding-bottom: 200px;
+}
+
+.testimonal-close-icon:hover {
+    transform: rotate(360deg);
+}
+
+#testimonials .container {
+    
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: auto;
+    width: 93%;
+
+}
+
+#testimonials h1 {
+    text-transform: capitalize;
+    color:gray;
+    font-weight: bolder;
+}
+.testimony-card {
+    position: relative;
+    background: white;
+    border-radius: 10%;
+    width: 32%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: auto;
+    padding: 48px;
+    margin-bottom: 74px;
+    padding-top: 89px;
+    padding-right: 45px;
+    padding-left: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+.testimony-card .body {
+    padding-bottom: 30px;
+}
+
+.testimony-card .body p {
+    cursor: pointer;
+    text-align: left;
+    line-height: 1.7;
+}
+
+.testimonal-sidebar  {
+    width: 0;
+    position: fixed;
+    cursor: pointer;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    background: white;
+    background: lavender;
+    height: 100%;
+    overflow-y: scroll;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-family: var(--secondary-font-Poppins-family);
+  }
+
+
+
+.testimonal-sidebar .container .testimony-card {
+    position: relative;
+    background: white;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: auto;
+    padding: 26px;
+    margin-bottom: 42px;
+    padding-top: 91px;
+    border-radius: 0;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.testimonal-sidebar .container .testimony-card .review {
+    display: flex;
+    width: 18%;
+    padding-left: 10px;
+    justify-content: space-evenly;
+    margin-right: 70px;
+
+   
+  }
+
+  @supports (-moz-appearance: none) {
+
+    /* Firefox-specific styles because it works differently in firefox and chrome */
+    .testimonal-sidebar .container .testimony-card .review {
+        width: 5%;
+    }
+}
+
+
+  .testimonal-sidebar .container .testimony-card .quote-profile-pic {
+        border-radius: 50%;
+        height: 100px;
+        border-top: 4px solid var(--dodger-blue);
+        position: absolute;
+        top: -11%;
+        left: 41%;
+        right: 50%;
+        width: 100px;
+      
+  }
+
+.quote-img{
+    border-radius: 50%;
+    background: white;
+    padding: 10px;
+  }
+
+.quote-img-1{
+    position: absolute;
+    top: -12px;
+    left: -25px;
+  
+   
+}
+
+
+.quote-img-2 {
+  position: absolute;
+  top: 91%;
+  right: -3%;
+ 
+
+}
+
+.quote-img-1,
+.quote-img-2 {
+    border: 4px solid lavender;
+    height: auto;
+    color: gray;
+}
+
+.quote-profile-pic {
+    border-radius: 50%;
+    height: 100px;
+    border-top: 4px solid var(--dodger-blue);
+    position: absolute;
+    top: -11%;
+    left: 33%;
+    right: 50%;
+    width: 100px;
+  }
+
+
+ .review {
+  display: flex;
+  width: 9%;
+  padding-left: 10px;
+  justify-content: space-evenly;
+  margin-right: 45px;
+}
+
+
+.company-name {
+    text-align: left;
+}
+
+.company-name p:first-child {
+    font-weight: bolder;
+}
+
+
+.intro-section {
+    position: relative;
+}
+
+.intro-section > p {
+    cursor: pointer;
+    font-size: 20px;
+    width: 62%;
+    margin: auto;
+    line-height: 2.2;
+    font-weight: bold;
+    opacity: 0.5;
+  }
+
+.intro-quote-1 {
+    position: absolute;
+    top: -11px;
+    left: 200px;
+    
+    
+  }
+
+.intro-quote-2 {
+  
+    position: absolute;
+    right: 135px;
+     
+}
+
+.intro-quote-1,
+.intro-quote-2 {
+    height: 48px;
+    color: gray;
+}
+
+.testimony-card:hover {
+    opacity: 0.8;
+}
+
+.readmore-spinner {
+    display: none;
+    height: 20px;
+    width: 20px;
+    background: lightblue;
+}
 
 /* Visually hidden class for screen reader-only text */
 .visually-hidden {
@@ -728,14 +1019,11 @@ footer .container p {
 }
 
 
-
 .footer-img {
     height: 200px;
     transform: translateX(-50px);
     width: 200px;
 }
-
-
 
 
 .footer-social-img {
@@ -754,6 +1042,9 @@ footer .container p {
 }
 
 
+.app {
+    border: 1px solid white;
+}
 /* The footer links */
 .legal>a,
 .resources>a,
@@ -798,3 +1089,311 @@ q {
     background: rgb(25, 24, 24);
     font-family: var(--secondary-font-Poppins-family);
 }
+
+
+.pagination > a {
+    color: black;
+    font-family: var(--secondary-font-Poppins-family);
+    text-decoration: none;
+    /* border: 1px solid; */
+    padding: 8px;
+    font-family: var(--primary-font-Roboto-family);
+    font-weight: bold;
+  }
+
+  .pagination > a:nth-child(even) {
+    background: lightblue;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .pagination > a:nth-child(odd) {
+    background: var(--dodger-blue);
+    color: white;
+  }
+
+  .pagination > a:hover {
+    transform: scale(1.1);
+  }
+
+  /* The live chat starts here */
+  .live-chat {
+    background: rgb(24 21 21);
+    border: 2px solid white;
+    border-radius: 1%;
+    box-shadow: var(--box-shadow-primary);
+    display: none;
+    font-family: var(--secondary-font-Poppins-family);
+    font-size: 0.9rem;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 100px;
+    position: fixed;
+    right: 115px;
+    top: 10px;
+    transition: opacity 10s ease-in-out; 
+    width: 23%;
+    z-index: 10;
+}
+
+/* Apply this style only to Firefox */
+@-moz-document url-prefix() {
+    .live-chat {
+        top: -10px;
+    }
+}
+
+.live-chat.active {
+    opacity: 1;
+}
+
+.live-chat .container .body > div {
+    margin-top: 12px;
+}
+
+.live-spinner-img {
+    background: 4px white solid;
+    border: 4px solid white;
+    border-radius: 50%;
+    height: 120px;
+    position: absolute;
+    top: 0;
+    width: 120px;
+}
+
+.live-chat .container {
+    background: #2a2b2b;
+    border-radius: 9%;
+    margin: auto;
+    margin-top: 2px;
+  
+}
+ 
+.chat-input {
+    width: 100%;
+}
+
+.live-chat-icon  {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.live-icon {
+    background: green;
+    border-radius: 4%;
+    margin-bottom: 10px;
+    margin-right: 15px;
+    margin-top: 10px;
+    padding: 7px;
+}
+
+.live-chat > .banner {
+    background: var(--dodger-blue);
+    border-top-right-radius: 2%;
+    border-top-left-radius: 2%;
+    border: 0;
+    height: 90px;
+    width: 100%;
+
+}
+
+.message-us-icon,
+.message-us-icon-close {
+    height: 60px;
+    cursor: pointer;
+    border: 1px solid var(--dodger-blue);
+    position: fixed;
+    bottom: 0;
+    background: white;
+    border-radius: 25%;
+    right: 115px;
+    box-shadow: var(--box-shadow-primary);
+  }
+
+
+.message-us-icon-close {
+    display: none;
+}
+
+/* For a smoother transition to the right */
+.message-icon, .message-icon-close {
+    transition: right 0.5s ease;
+}
+
+.message-icon:hover,
+.message-icon-close:hover {
+    
+    opacity: 0.2;
+}
+
+
+.chat-input {
+    background: black;
+    border: 1px solid lavender;
+    color: white;
+    font-size: 15px;
+    height: 50px;
+    margin-top: 1px;
+}
+
+
+::placeholder {
+    font-family: var(--primary-font-Roboto-family);
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+
+.dates {
+    gap: 10px;
+}
+
+.calender-date {
+    border-radius: 25%;
+}
+
+.chat-icons {
+    height: 15px;
+  }
+
+.img-icon {
+    height: 15px;
+}
+
+.offline-icon {
+    left: 103px;
+    position: absolute;
+    top: 82px;
+    width: 12%;
+    z-index: 1000000;
+}
+
+
+/* Intro elements */
+
+.introduction {
+    background: linear-gradient(16deg, lavender 51%, white 48%, white), lavender;
+    font-family: var(--secondary-font-Poppins-family);
+    padding-bottom: 20px;
+}
+
+.intro-container {
+    width: 70%;
+    margin: auto;
+}
+
+/* center the text in the intro heading */
+.intro-container p b {
+    display: block;
+    text-align: center;
+}
+
+.intro-container h2, .intro-container h3 {
+    animation: fadeInLeftToRight 8s ease forwards;
+}
+
+
+@keyframes fadeInLeftToRight {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* About team styles */
+
+.about-container {
+    font-family: var(--secondary-font-Poppins-family);
+    max-width: 90%;
+    margin: auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    background: linear-gradient(-16deg, lavender 51%, white 48%, white), lavender;
+}
+
+.team-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;;
+}
+
+.team-member {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    margin: 10px;   
+    flex: 1;
+    max-width: 25%;     
+    box-sizing: border-box;
+    background-color: white;
+    overflow: hidden;
+}
+
+
+.team-member img {
+    max-height: 90%; 
+    width: auto;
+    object-fit: cover;
+}
+
+
+/* Hide the <p> elements by default and set positioning */
+.team-member p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    visibility: hidden; /* Hide by default */
+    opacity: 0; /* Hide by default */
+    transition: visibility 0s, opacity 0.5s linear; /* Smooth transition */
+}
+
+.team-member:hover p {
+    visibility: visible; /* Show on hover */
+    opacity: 1; /* Show on hover */
+}
+
+/* Add animation (fade in the overlay layer) */
+.container h3 {
+    animation: fadeInLeftToRight 8s ease forwards;
+    /* color: blue; Apply blue color */
+    
+}
+
+
+
+
+/* End of about team styles */
+
+
+/* Responsive elements */
+
+@media (max-width: 768px) {
+    .team-member {
+        max-width: 40%; /* For smaller screens, two columns */
+        padding: 10px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .team-member {
+        max-width: 90%; /* For mobile screens, one column */
+    }
+}
+
+/* End of responsive elements */
