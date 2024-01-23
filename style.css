@@ -50,6 +50,10 @@ button {
     cursor: pointer;
 }
 
+main {
+    padding-top: 5rem;
+}
+
 
 /* width sizes */
 
@@ -358,13 +362,15 @@ nav {
 .nav-container {
     padding-bottom: 1px;
     padding-top: 20px;
-
+    width: 100%;
 }
 
 .nav-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 5rem;
 }
 
 .nav-links a {
@@ -1380,6 +1386,28 @@ q {
 /* End of about team styles */
 
 
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    margin-bottom: 1.5rem;
+}
+
+.hamburger-menu .line {
+    background-color: white;
+    height: 3px;
+    width: 100%;
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 /* Responsive elements */
 
 @media (max-width: 768px) {
@@ -1400,5 +1428,27 @@ q {
         height: auto;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+        .get-quote {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 
 /* End of responsive elements */
