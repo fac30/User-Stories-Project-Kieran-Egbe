@@ -58,6 +58,7 @@ function handleEmailInputEntry() {
 
 }
 
+// Function doesn't check if the input entered is number, so current it will submit a tex
 function handleCountryInputEntry() {
     const countryInputFieldElement = document.querySelector("#contact-form-company");
     const countryIconElement       = document.querySelector(".company-icon");
@@ -68,7 +69,6 @@ function handleCountryInputEntry() {
 
 function handlePreferredContactInputEntry() {
     const preferedCountryIcon = document.querySelector(".contact-number-icon");
-    
     handleEnterPress(preferedCountryInputFieldElement, preferedCountryIcon);
 }
 
@@ -78,7 +78,7 @@ function handleCountryInputSelection() {
     const countrySelectionElement     = document.querySelector("#country");
     const countrySelectionIconElement = document.querySelector(".country-icon");
 
-    // note to self - add error handling 
+   
 
     countrySelectionElement.addEventListener("change", () => {
         if (countrySelectionElement.selectedIndex > EMPTY_VALUE) {
@@ -263,6 +263,9 @@ function handleContactFormSubmit() {
             Swal.fire("Thank You!", "Your message has been successfully submitted. We appreciate your contact.", "success");
             e.target.reset();
 
+
+            // Resets the color count 
+            resetCharacterTextBoxString();
 
             // Hide the hidden input contact number field
              hidePreferencesSection()
