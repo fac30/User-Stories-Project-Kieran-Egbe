@@ -1384,15 +1384,20 @@ q {
 
 @media (max-width: 768px) {
     .team-member {
-        max-width: 40%; /* For smaller screens, two columns */
+        max-width: 40%; 
         padding: 10px;
     }
 
 }
 
 @media (max-width: 480px) {
+    .team-row {
+        flex-direction: column; 
+    }
     .team-member {
         max-width: 90%; /* For mobile screens, one column */
+        margin: 10px auto;
+        height: auto;
     }
 }
 

@@ -145,14 +145,14 @@
         </section>
     
         <section aria-labelledby="about-team" class="margin-top-xl lavender-bg-color">
-        <div class="about-container">
-            <h3 class="center-text font-xl blue-color margin-top-md">Meet Our Team</h3>
-            <div class="team-row">
-                <div class="team-member flex-column padding-sm margin-top-md border">
-                    <img src="Images/jordan-woo.png" alt="Jordan Woo">
-                    <h4 class="center-text text-captalize blue-color">Jordan Woo, CEO & Founder</h4>
-                    <p class="text-left-align">Visionary leader and founder of QuantumWeb agency, Jordan brings over 20 years of experience in web development and cybersecurity...</p>            
-                </div>
+            <div class="about-container">
+                <h3 class="center-text font-xl blue-color margin-top-md">Meet Our Team</h3>
+                <div class="team-row">
+                    <div class="team-member flex-column padding-sm margin-top-md border">
+                        <img src="Images/jordan-woo.png" alt="Jordan Woo">
+                        <h4 class="center-text text-captalize blue-color">Jordan Woo, CEO & Founder</h4>
+                        <p class="text-left-align">Visionary leader and founder of QuantumWeb agency, Jordan brings over 20 years of experience in web development and cybersecurity...</p>            
+                    </div>
             </div>
             
             <div class="team-row">
@@ -373,8 +373,6 @@
         </figure>
 
 
-        <!-- The contact form section -->
-        
 
         <section id="contact-us" aria-labelledby="contact-us-title">
 
@@ -400,67 +398,41 @@
                     <form action="" id="contact-form" class="flex-column white-bg-color" role="form"
                         aria-labelledby="contact-form-label">
 
+
                         <div class="contact-form-title center-text padding-top-md padding-bottom-md">
                             <h3 id="contact-form-label" class="font-lg bold text-upper">Contact Form</h3>
                         </div>
 
-                        <div class="label flex-space-between">
-                            <label for="contact-form-id" id="titleLabel">Title</label>
-                            <span><img src="static/img/white-heavy-check-mark.svg" alt="" srcset="" 
-                                class="contact-label-icon title-icon"></span>
-                        </div>
-                        <input type="text" name="title" id="contact-form-title" required aria-label="Title">
 
-                        <div class="label flex-space-between">
-                            <label for="contact-form-email" id="emailLabel">Email</label>
-                            <span><img src="static/img/white-heavy-check-mark.svg" alt="" srcset="" 
-                                class="contact-label-icon email-icon"></span>
-                        </div>
+                        <label for="contact-form-id" id="titleLabel">Title</label>
+                        <input type="text" name="title" id="contact-form-id" required aria-label="Title">
+
+                        <label for="contact-form-email" id="emailLabel">Email</label>
                         <input type="email" name="email" id="contact-form-email" required aria-label="Email">
 
-
-                        <div class="label flex-space-between">
-                            <label for="contact-form-company" id="companyLabel">Company</label>
-                            <span><img src="static/img/white-heavy-check-mark.svg" alt="" srcset="" 
-                                class="contact-label-icon company-icon"></span>
-                        </div>
-                       
+                        <label for="contact-form-company" id="companyLabel">Company</label>
                         <input type="text" name="company" id="contact-form-company" required aria-label="Company">
 
-                        <div class="label flex-space-between">
-                            <label for="prefered-contact">Preferred contact: </label>
 
-                            <span><img src="static/img/white-heavy-check-mark.svg" alt="" srcset="" 
-                                class="contact-label-icon contact-number-icon"></span>
-                        </div>
-                        
-                        <select name="prefered-number" id="prefered-contact" required aria-label="Preferred contact">
+                        <label for="contact-number">Preferred contact: </label>
+                        <select name="contact-number" id="contact-number" required aria-label="Preferred contact">
                             <option value="" selected></option>
                             <option value="mobile">Mobile</option>
                             <option value="phone">Phone</option>
-                          </select>
-                          
-                          <input type="text" name="prefered-number" id="contact-form-number" aria-labelledby="contactNumberLabel">
-
-
-                        <div class="label flex-space-between">
-                            <label for="country" id="countryLabel">Country: </label>
-                            <span><img src="static/img/white-heavy-check-mark.svg" alt="" srcset=""
-                                 class="contact-label-icon country-icon"></span>
-                        </div>
-                      
-
-                        <select name="location" id="country" required aria-label="Country">
-                            <option value="" selected></option>
                         </select>
 
 
-                        <div class="label flex-space-between">
-                            <label for="description">Reason for contacting us: </label>
-                            <span><img src="static/img/white-heavy-check-mark.svg" alt="" srcset="" 
-                                class="contact-label-icon contact-us-icon"></span>
-                        </div>
-                       
+                        <!-- placeholder -->
+                        <!-- <input type="text" name="contact-number" id="contact-form-number" required aria-labelledby="contactNumberLabel"> -->
+
+                        <label for="country" id="countryLabel">Country: </label>
+                        <select name="location" id="country" required aria-label="Country">
+                            <option value="" selected></option>
+                            <option value="USA">Placeholder 1</option>
+                            <option value="Canada">Placeholder 2</option>
+                        </select>
+
+                        <label for="description">Reason for contacting us: </label>
                         <textarea name="reason" id="description" cols="40" rows="10"
                             aria-label="Reason for contacting us (Minimum characters: 50)" minlength="50"
                             maxlength="500" required></textarea>
@@ -474,23 +446,18 @@
                         </div>
 
                         <div class="button right-align padding-top-sm">
-                            <button type="submit" class="button-md text-upper dodger-blue-bg-color white-color 
-                                contact-submit-button"
+                            <button type="submit" class="button-md text-upper dodger-blue-bg-color white-color"
                                 aria-label="Submit Form">
                                 <span class="visually-hidden">Submit Form</span>
                                 Send
                             </button>
                         </div>
 
+
                     </form>
                 </div>
-
             </div>
         </section>
-
-
-        <!-- The contact form section ends here -->
-
 
         <div class="quote center-text" aria-labelledby="quoteHeading">
             <blockquote class="padding-top-md padding-bottom-md">
@@ -1253,11 +1220,8 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- <script src="index.js" type="module"></script> -->
-    <script src="nav.js" type="module"></script>
+    <script src="index.js" type="module"></script>
     <script src="message.js" type="module"></script>
-    <script src="contact-form.js" type="module"></script>
-    <script type="module" src="testimonal.js"></script>
 </body>
 
 </html>
