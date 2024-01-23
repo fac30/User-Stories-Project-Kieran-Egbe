@@ -373,6 +373,8 @@
         </figure>
 
 
+        <!-- The contact form section -->
+        
 
         <section id="contact-us" aria-labelledby="contact-us-title">
 
@@ -398,41 +400,67 @@
                     <form action="" id="contact-form" class="flex-column white-bg-color" role="form"
                         aria-labelledby="contact-form-label">
 
-
                         <div class="contact-form-title center-text padding-top-md padding-bottom-md">
                             <h3 id="contact-form-label" class="font-lg bold text-upper">Contact Form</h3>
                         </div>
 
+                        <div class="label flex-space-between">
+                            <label for="contact-form-id" id="titleLabel">Title</label>
+                            <span><img src="static/img/white-heavy-check-mark.svg" alt="" srcset="" 
+                                class="contact-label-icon title-icon"></span>
+                        </div>
+                        <input type="text" name="title" id="contact-form-title" required aria-label="Title">
 
-                        <label for="contact-form-id" id="titleLabel">Title</label>
-                        <input type="text" name="title" id="contact-form-id" required aria-label="Title">
-
-                        <label for="contact-form-email" id="emailLabel">Email</label>
+                        <div class="label flex-space-between">
+                            <label for="contact-form-email" id="emailLabel">Email</label>
+                            <span><img src="static/img/white-heavy-check-mark.svg" alt="" srcset="" 
+                                class="contact-label-icon email-icon"></span>
+                        </div>
                         <input type="email" name="email" id="contact-form-email" required aria-label="Email">
 
-                        <label for="contact-form-company" id="companyLabel">Company</label>
+
+                        <div class="label flex-space-between">
+                            <label for="contact-form-company" id="companyLabel">Company</label>
+                            <span><img src="static/img/white-heavy-check-mark.svg" alt="" srcset="" 
+                                class="contact-label-icon company-icon"></span>
+                        </div>
+                       
                         <input type="text" name="company" id="contact-form-company" required aria-label="Company">
 
+                        <div class="label flex-space-between">
+                            <label for="prefered-contact">Preferred contact: </label>
 
-                        <label for="contact-number">Preferred contact: </label>
-                        <select name="contact-number" id="contact-number" required aria-label="Preferred contact">
+                            <span><img src="static/img/white-heavy-check-mark.svg" alt="" srcset="" 
+                                class="contact-label-icon contact-number-icon"></span>
+                        </div>
+                        
+                        <select name="prefered-number" id="prefered-contact" required aria-label="Preferred contact">
                             <option value="" selected></option>
                             <option value="mobile">Mobile</option>
                             <option value="phone">Phone</option>
-                        </select>
+                          </select>
+                          
+                          <input type="text" name="prefered-number" id="contact-form-number" aria-labelledby="contactNumberLabel">
 
 
-                        <!-- placeholder -->
-                        <!-- <input type="text" name="contact-number" id="contact-form-number" required aria-labelledby="contactNumberLabel"> -->
+                        <div class="label flex-space-between">
+                            <label for="country" id="countryLabel">Country: </label>
+                            <span><img src="static/img/white-heavy-check-mark.svg" alt="" srcset=""
+                                 class="contact-label-icon country-icon"></span>
+                        </div>
+                      
 
-                        <label for="country" id="countryLabel">Country: </label>
                         <select name="location" id="country" required aria-label="Country">
                             <option value="" selected></option>
-                            <option value="USA">Placeholder 1</option>
-                            <option value="Canada">Placeholder 2</option>
                         </select>
 
-                        <label for="description">Reason for contacting us: </label>
+
+                        <div class="label flex-space-between">
+                            <label for="description">Reason for contacting us: </label>
+                            <span><img src="static/img/white-heavy-check-mark.svg" alt="" srcset="" 
+                                class="contact-label-icon contact-us-icon"></span>
+                        </div>
+                       
                         <textarea name="reason" id="description" cols="40" rows="10"
                             aria-label="Reason for contacting us (Minimum characters: 50)" minlength="50"
                             maxlength="500" required></textarea>
@@ -446,19 +474,23 @@
                         </div>
 
                         <div class="button right-align padding-top-sm">
-                            <button type="submit" class="button-md text-upper dodger-blue-bg-color white-color"
+                            <button type="submit" class="button-md text-upper dodger-blue-bg-color white-color 
+                                contact-submit-button"
                                 aria-label="Submit Form">
                                 <span class="visually-hidden">Submit Form</span>
                                 Send
                             </button>
                         </div>
 
-
                     </form>
                 </div>
 
             </div>
         </section>
+
+
+        <!-- The contact form section ends here -->
+
 
         <div class="quote center-text" aria-labelledby="quoteHeading">
             <blockquote class="padding-top-md padding-bottom-md">
@@ -1221,8 +1253,11 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="index.js" type="module"></script>
+    <!-- <script src="index.js" type="module"></script> -->
+    <script src="nav.js" type="module"></script>
     <script src="message.js" type="module"></script>
+    <script src="contact-form.js" type="module"></script>
+    <script type="module" src="testimonal.js"></script>
 </body>
 
 </html>
