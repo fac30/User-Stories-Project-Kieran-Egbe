@@ -108,6 +108,7 @@ function getPhonePreference() {
             if (phonePreferenceElement.selectedIndex > EMPTY_VALUE) {
                 e.preventDefault();
                 const displayType = "block";
+
                 toggleElementDisplay(phoneNumberInputElement, true, displayType)
 
                 // set the required attribute to required
@@ -238,7 +239,7 @@ function updateString(remainingMinChars, stringElement, msg) {
 // Reset character count strings by simulating an event with an empty value.
 // The simulated event mimics the structure of a real event passed to handleCharacters.
 // This ensures consistent updating of character count displays.
-function resetCharacterTextBoxString() {
+function resetCharacterTextBoxString(minmumChars=50, maxChars=500) {
     const simulatedEvent = {
         target: {
             value: {
@@ -248,8 +249,8 @@ function resetCharacterTextBoxString() {
     };
 
     // Update character count displays for different scenarios
-    handleCharacters(simulatedEvent, 50, ".minimum-char-string", "Minimum characters to use: ");
-    handleCharacters(simulatedEvent, 500, ".remaining-char-string", "Number of characters remaining: ");
+    handleCharacters(simulatedEvent, minmumChars, ".minimum-char-string", "Minimum characters to use: ");
+    handleCharacters(simulatedEvent, maxChars, ".remaining-char-string", "Number of characters remaining: ");
 }
 
 
