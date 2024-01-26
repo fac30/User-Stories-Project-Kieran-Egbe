@@ -183,13 +183,13 @@ function disableTextAreaBoxPaste(textAreaElement) {
 
 
 
-function handleMinimumChars(e) {
-    handleCharacters(e, 50, ".minimum-char-string", "Minimum characters to use: ");
+function handleMinimumChars(e, minimumCharsLimit=50) {
+    handleCharacters(e, minimumCharsLimit, ".minimum-char-string", "Minimum characters to use: ");
 }
 
 
-function handleMaxChars(e) {
-    handleCharacters(e, 500, ".remaining-char-string", "Number of characters remaining: ");
+function handleMaxChars(e, maximumCharsLimit=500) {
+    handleCharacters(e, maximumCharsLimit, ".remaining-char-string", "Number of characters remaining: ");
 }
 
 
@@ -240,6 +240,8 @@ function updateString(remainingMinChars, stringElement, msg) {
 // The simulated event mimics the structure of a real event passed to handleCharacters.
 // This ensures consistent updating of character count displays.
 function resetCharacterTextBoxString(minmumChars=50, maxChars=500) {
+    
+
     const simulatedEvent = {
         target: {
             value: {
