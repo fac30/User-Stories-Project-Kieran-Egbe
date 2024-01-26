@@ -1294,9 +1294,10 @@ q {
 }
 
 /* center the text in the intro heading */
+
 .intro-container p b {
     display: block;
-    text-align: left;
+    text-align: center;
 }
 
 .intro-container h2,
@@ -1640,6 +1641,7 @@ q {
 
     .intro-container b {
         padding-bottom: 10px;
+        text-align: left;
     }
 
     /* The introduction for the intro which holds the p-tags */
