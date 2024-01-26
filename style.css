@@ -1296,7 +1296,7 @@ q {
 /* center the text in the intro heading */
 .intro-container p b {
     display: block;
-    text-align: center;
+    text-align: left;
 }
 
 .intro-container h2,
@@ -1642,7 +1642,7 @@ q {
         padding-bottom: 10px;
     }
 
-    /* The introduction section which holds all the p-tags */
+    /* The introduction for the intro which holds the p-tags */
     .intro-section > p {
 
         /* everything else */
@@ -2029,6 +2029,7 @@ q {
     /* --------------------------------------------------- The quotation banner -------------------------------------------- */
     figure blockquote p {
         font-size: 1.1rem;
+        ;
     }
 
     #quoteText {
