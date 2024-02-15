@@ -3,6 +3,7 @@ import { isElementValid } from "./static/js/utils.js";
 const navQuoteLink = document.querySelector("#quote")
 const quoteBox = document.querySelector(".quote-box")
 const quotePopupBox = document.querySelector(".popup");
+const navSpinner = document.querySelector(".spinner");
 
 
 
@@ -123,7 +124,6 @@ function handleQuotePopupDisplay(e) {
 
 function handleNavSpinner(duration) {
 
-    const navSpinner = document.querySelector(".spinner");
     let isSpinnrVisible = true;
 
     hideQuoteButton();
@@ -204,13 +204,6 @@ function showQuoteButton() {
 function hideQuoteButton() {
     quoteBox.style.display = "none";
 }
-
-
-
-
-
-
-
 
 
 

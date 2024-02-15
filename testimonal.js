@@ -22,12 +22,14 @@ function openReadMoreSideBar() {
 
         readMoreButton.addEventListener("click", (e) => {
             e.preventDefault();
-
+         
             readMorespinner.style.display = "inline-flex";
+          
 
             setTimeout(() => {
                 sideBar.style.width = WIDTH_SIZE;
                 closeIcon.style.display = "flex";
+                checkWindowSize(WIDTH_SIZE);
             }, 2000)
 
 
@@ -36,33 +38,31 @@ function openReadMoreSideBar() {
     }
 }
 
+
+
 function closeTestimonalSideBar() {
 
     const isCloseIconValid = isElementValid(closeIcon, ERROR_MSG);
     const isSideBarValid = isElementValid(sideBar, ERROR_MSG);
+    const animationDuration = 100;
+    const closeWidth = 0;
 
     if (isCloseIconValid && isSideBarValid) {
         closeIcon.classList.toggle("rotateIcon");
 
         closeIcon.addEventListener("click", () => {
-            handleCloseSideBar(closeIcon, sideBar);
+            setTimeout(() => {
+                sideBar.style.width = closeWidth;
+                closeIcon.style.display = "none";
+                readMorespinner.style.display = "none";
+        
+            }, animationDuration);
         });
     }
 }
 
-function handleCloseSideBar(closeIcon, sideBar) {
-    const animationDuration = 100;
-    const closeWidth = 0;
-
-    setTimeout(() => {
-        sideBar.style.width = closeWidth;
-        closeIcon.style.display = "none";
-        readMorespinner.style.display = "none";
-
-    }, animationDuration);
-
-}
 
 
 closeTestimonalSideBar();
 openReadMoreSideBar();
+

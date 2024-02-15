@@ -58,7 +58,7 @@ function isElementValid(element, errorMsg) {
 async function loadFile(filePath) {
     try {
         const response = await fetch(filePath);
-        const data = await response.text();
+        const data    = await response.text();
         return data;
     } catch (error) {
         console.error('Error:', error);

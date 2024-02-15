@@ -181,6 +181,7 @@ button {
     display: flex;
     justify-content: center;
 }
+
 /* End of flex elements */
 
 
@@ -394,6 +395,11 @@ nav {
 
 }
 
+.nav-logo-img {
+    /* display: none; */
+    /* width: 178px; */
+}
+
 .popup {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
@@ -514,7 +520,7 @@ nav {
 .button-lg {
 
     font-size: var(--font-sm);
-    padding: 30px;  
+    padding: 30px;
 }
 
 .contact-us-btn {
@@ -547,7 +553,7 @@ nav {
     background: var(--dodger-blue);
     font-weight: bold;
     box-shadow: var(--box-shadow-primary);
-       
+
 }
 
 .read-more-btn:hover {
@@ -676,7 +682,7 @@ the contact us section */
     text-transform: capitalize;
 }
 
-#contact-form .label  {
+#contact-form .label {
     padding-top: 3px;
 }
 
@@ -684,6 +690,7 @@ the contact us section */
 .contact-label-icon {
     height: 20px;
 }
+
 /* hide the icons */
 
 .title-icon,
@@ -728,10 +735,11 @@ The testimonials section */
     cursor: pointer;
     display: none;
 }
+
 #testimonials {
     font-family: var(--primary-font-Roboto-family);
     background: rgb(152, 190, 203);
-    padding-bottom: 200px;
+    padding-bottom: 48px;
 }
 
 .testimonal-close-icon:hover {
@@ -739,7 +747,7 @@ The testimonials section */
 }
 
 #testimonials .container {
-    
+
     display: flex;
     flex-wrap: wrap;
 
@@ -750,9 +758,10 @@ The testimonials section */
 
 #testimonials h1 {
     text-transform: capitalize;
-    color:gray;
+    color: gray;
     font-weight: bolder;
 }
+
 .testimony-card {
     position: relative;
     background: white;
@@ -767,7 +776,7 @@ The testimonials section */
     padding-right: 45px;
     padding-left: 50px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
+}
 
 .testimony-card .body {
     padding-bottom: 30px;
@@ -779,7 +788,7 @@ The testimonials section */
     line-height: 1.7;
 }
 
-.testimonal-sidebar  {
+.testimonal-sidebar {
     width: 0;
     position: fixed;
     cursor: pointer;
@@ -792,7 +801,7 @@ The testimonials section */
     overflow-y: scroll;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-family: var(--secondary-font-Poppins-family);
-  }
+}
 
 
 
@@ -818,10 +827,10 @@ The testimonials section */
     justify-content: space-evenly;
     margin-right: 70px;
 
-   
-  }
 
-  @supports (-moz-appearance: none) {
+}
+
+@supports (-moz-appearance: none) {
 
     /* Firefox-specific styles because it works differently in firefox and chrome */
     .testimonal-sidebar .container .testimony-card .review {
@@ -830,38 +839,38 @@ The testimonials section */
 }
 
 
-  .testimonal-sidebar .container .testimony-card .quote-profile-pic {
-        border-radius: 50%;
-        height: 100px;
-        border-top: 4px solid var(--dodger-blue);
-        position: absolute;
-        top: -11%;
-        left: 41%;
-        right: 50%;
-        width: 100px;
-      
-  }
+.testimonal-sidebar .container .testimony-card .quote-profile-pic {
+    border-radius: 50%;
+    height: 100px;
+    border-top: 4px solid var(--dodger-blue);
+    position: absolute;
+    top: -11%;
+    left: 41%;
+    right: 50%;
+    width: 100px;
 
-.quote-img{
+}
+
+.quote-img {
     border-radius: 50%;
     background: white;
     padding: 10px;
-  }
+}
 
-.quote-img-1{
+.quote-img-1 {
     position: absolute;
     top: -12px;
     left: -25px;
-  
-   
+
+
 }
 
 
 .quote-img-2 {
-  position: absolute;
-  top: 91%;
-  right: -3%;
- 
+    position: absolute;
+    top: 91%;
+    right: -3%;
+
 
 }
 
@@ -881,15 +890,15 @@ The testimonials section */
     left: 33%;
     right: 50%;
     width: 100px;
-  }
+}
 
 
- .review {
-  display: flex;
-  width: 9%;
-  padding-left: 10px;
-  justify-content: space-evenly;
-  margin-right: 45px;
+.review {
+    display: flex;
+    width: 9%;
+    padding-left: 10px;
+    justify-content: space-evenly;
+    margin-right: 45px;
 }
 
 
@@ -906,7 +915,7 @@ The testimonials section */
     position: relative;
 }
 
-.intro-section > p {
+.intro-section>p {
     cursor: pointer;
     font-size: 20px;
     width: 62%;
@@ -914,21 +923,21 @@ The testimonials section */
     line-height: 2.2;
     font-weight: bold;
     opacity: 0.5;
-  }
+}
 
 .intro-quote-1 {
     position: absolute;
     top: -11px;
-    left: 200px;
-    
-    
-  }
+    left: 25px;
+
+
+}
 
 .intro-quote-2 {
-  
+
     position: absolute;
-    right: 135px;
-     
+    right: 32px;
+
 }
 
 .intro-quote-1,
@@ -1045,6 +1054,7 @@ footer .container p {
 .app {
     border: 1px solid white;
 }
+
 /* The footer links */
 .legal>a,
 .resources>a,
@@ -1091,7 +1101,7 @@ q {
 }
 
 
-.pagination > a {
+.pagination>a {
     color: black;
     font-family: var(--secondary-font-Poppins-family);
     text-decoration: none;
@@ -1099,25 +1109,25 @@ q {
     padding: 8px;
     font-family: var(--primary-font-Roboto-family);
     font-weight: bold;
-  }
+}
 
-  .pagination > a:nth-child(even) {
+.pagination>a:nth-child(even) {
     background: lightblue;
     font-weight: bold;
     cursor: pointer;
-  }
+}
 
-  .pagination > a:nth-child(odd) {
+.pagination>a:nth-child(odd) {
     background: var(--dodger-blue);
     color: white;
-  }
+}
 
-  .pagination > a:hover {
+.pagination>a:hover {
     transform: scale(1.1);
-  }
+}
 
-  /* The live chat starts here */
-  .live-chat {
+/* The live chat starts here */
+.live-chat {
     background: rgb(24 21 21);
     border: 2px solid white;
     border-radius: 1%;
@@ -1131,7 +1141,7 @@ q {
     position: fixed;
     right: 115px;
     top: 10px;
-    transition: opacity 10s ease-in-out; 
+    transition: opacity 10s ease-in-out;
     width: 23%;
     z-index: 10;
 }
@@ -1147,7 +1157,7 @@ q {
     opacity: 1;
 }
 
-.live-chat .container .body > div {
+.live-chat .container .body>div {
     margin-top: 12px;
 }
 
@@ -1166,14 +1176,14 @@ q {
     border-radius: 9%;
     margin: auto;
     margin-top: 2px;
-  
+
 }
- 
+
 .chat-input {
     width: 100%;
 }
 
-.live-chat-icon  {
+.live-chat-icon {
     display: flex;
     justify-content: flex-end;
 }
@@ -1187,7 +1197,7 @@ q {
     padding: 7px;
 }
 
-.live-chat > .banner {
+.live-chat>.banner {
     background: var(--dodger-blue);
     border-top-right-radius: 2%;
     border-top-left-radius: 2%;
@@ -1208,7 +1218,7 @@ q {
     border-radius: 25%;
     right: 115px;
     box-shadow: var(--box-shadow-primary);
-  }
+}
 
 
 .message-us-icon-close {
@@ -1216,13 +1226,14 @@ q {
 }
 
 /* For a smoother transition to the right */
-.message-icon, .message-icon-close {
+.message-icon,
+.message-icon-close {
     transition: right 0.5s ease;
 }
 
 .message-icon:hover,
 .message-icon-close:hover {
-    
+
     opacity: 0.2;
 }
 
@@ -1254,7 +1265,7 @@ q {
 
 .chat-icons {
     height: 15px;
-  }
+}
 
 .img-icon {
     height: 15px;
@@ -1283,12 +1294,14 @@ q {
 }
 
 /* center the text in the intro heading */
+
 .intro-container p b {
     display: block;
     text-align: center;
 }
 
-.intro-container h2, .intro-container h3 {
+.intro-container h2,
+.intro-container h3 {
     animation: fadeInLeftToRight 8s ease forwards;
 }
 
@@ -1298,6 +1311,7 @@ q {
         opacity: 0;
         transform: translateX(-50px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -1320,16 +1334,17 @@ q {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap;;
+    flex-wrap: wrap;
+    ;
 }
 
 .team-member {
     position: relative;
     width: 400px;
     height: 500px;
-    margin: 10px;   
+    margin: 10px;
     flex: 1;
-    max-width: 25%;     
+    max-width: 25%;
     box-sizing: border-box;
     background-color: white;
     overflow: hidden;
@@ -1337,7 +1352,7 @@ q {
 
 
 .team-member img {
-    max-height: 90%; 
+    max-height: 90%;
     width: auto;
     object-fit: cover;
 }
@@ -1350,28 +1365,34 @@ q {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent overlay */
     color: white;
     justify-content: center;
     align-items: center;
     display: flex;
     text-align: center;
     padding: 10px;
-    visibility: hidden; /* Hide by default */
-    opacity: 0; /* Hide by default */
-    transition: visibility 0s, opacity 0.5s linear; /* Smooth transition */
+    visibility: hidden;
+    /* Hide by default */
+    opacity: 0;
+    /* Hide by default */
+    transition: visibility 0s, opacity 0.5s linear;
+    /* Smooth transition */
 }
 
 .team-member:hover p {
-    visibility: visible; /* Show on hover */
-    opacity: 1; /* Show on hover */
+    visibility: visible;
+    /* Show on hover */
+    opacity: 1;
+    /* Show on hover */
 }
 
 /* Add animation (fade in the overlay layer) */
 .container h3 {
     animation: fadeInLeftToRight 8s ease forwards;
     /* color: blue; Apply blue color */
-    
+
 }
 
 
@@ -1380,20 +1401,700 @@ q {
 /* End of about team styles */
 
 
-/* Responsive elements */
+/* ----------------------------Responsive elements --------------------------------------*/
 
-@media (max-width: 768px) {
+/* TODO */
+/* Click the menu icon to show the dropdown menu */
+/*   ---- Right now the hamburger icon has no functionality when it is displayed */
+/* Finish the media queries for:
+      - tablet, 
+      - laptop 
+      - large screens 
+*/
+/* Completed - media queries for screen less that 600px */
+
+@media (max-width: 576px) {
+
+
+    /* -------------------------------------------------- The main navigation bar --------------------------------------------*/
+    .main-nav {
+        left: -900px;
+        height: 100%;
+        width: 50%;
+        /* font-size: 23px; */
+    }
+    /* the h1 header inside the main nav */
+    a.container:nth-child(2) {
+        /* positioning */
+        position: absolute;
+        top: 0;
+        right: 23px;
+
+        /* everything else */
+        font-size: 22px;
+    }
+
+    .nav-container {
+
+        background: #3b3838;
+
+        /* The direction of the elements */
+        display: flex;
+        flex-direction: column;
+
+        /* padding */
+        padding-left: 0px;
+
+        /* sizes */
+        height: 100%;
+        width: 100%;
+
+    }
+
+
+    /* the navigation */
+    .nav2 {
+        height: 50px;
+        width: 100%;
+    }
+
+
+    /* the navigation logo */
+    .nav-logo {
+        margin-bottom: 20px;
+        padding-top: 20px;
+    }
+
+    .nav-logo:hover {
+        opacity: 0.5;
+    }
+
+    .nav-logo a {
+        font-size: 1rem;
+        padding-left: 15px;
+    }
+
+    /* the navigation links for the nav */
+    .nav-links {
+
+        /* The directions */
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+
+        /* spacing */
+        padding-left: 1px;
+
+
+        /* the positioning */
+        position: absolute;
+        top: 90px;
+        width: 98%;
+    }
+
+    /* this controls the individual links border for navigation */
+    .nav-links a {
+        background: white;
+        color: black;
+        margin-bottom: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+    }
+
+    /* The second nav contains only two elements will disappear revealing the sidebar */
+    .nav-container2 .nav-logo {
+        padding-top: 5px;
+    }
+
+    .nav-container2 .nav-logo a {
+        font-size: 1.4rem;
+    }
+
+    /* the menu icon */
+    .hamburger2 {
+        display: flex;
+        position: absolute;
+        right: 0;
+        margin-right: 8px;
+    }
+
+    /* The hamburger  */
+    .hamburger,
+    .hamburger2 {
+
+        /* the direction and flex elements */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        /* the sizes */
+        height: 31px;
+        width: 30px;
+
+        /* The rest of css */
+        background: white;
+        border: 2px solid white;
+        cursor: pointer;
+
+        /* the positioning */
+        position: absolute;
+        top: 4px;
+    }
+
+    .hamburger:hover,
+    .hamburger2:hover {
+        opacity: 0.7;
+    }
+
+    /* The individual bar icons for the hamburger */
+    .bar {
+
+        /* sizes */
+        height: 4px;
+        width: 100%;
+
+        /* everything else */
+        background-color: black;
+        border-radius: 2px;
+        color: white;
+    }
+
+
+    /* The get quote button located with nav bar  */
+    .get-quote {
+        display: none;
+    }
+
+    /* The banner bar */
+    .banner {
+        border-right: 0;
+    }
+
+    .banner-container {
+        width: 100%;
+    }
+
+    .banner-img {
+        height: 300px;
+        width: 100%;
+    }
+
+    .banner .buttons {
+        display: none;
+    }
+
+    /* The call located within the banner. Inside a small screen they get smaller */
+    .call-to-action p {
+        font-size: 1.1rem;
+        line-height: 2;
+        padding-left: 13px;
+        text-transform: capitalize;
+    }
+
+    /* The width of the container for call-to-action */
+    div.call-to-action:nth-child(1) {
+        width: 98%;
+    }
+
+    /* The header */
+    .call-to-action h1 {
+        font-size: 1.6rem;
+    }
+
+    .call-to-action h1 span {
+        font-size: 1rem;
+        padding-left: 10px;
+    }
+
+    /* The text inside the p-tag for the call to us is removed */
+    p.dark-green:nth-child(2) {
+        display: none;
+    }
+
+
+    /* -------------------------------------------------- The introduction section ---------------------------------------- */
+    /* Native elements e.g h1, h2, etc */
+    h1.font-xl {
+        margin-bottom: 10px;
+    }
+
+    .introduction {
+        padding-bottom: 4px;
+    }
+
+    .intro-container {
+        width: 100%;
+        box-shadow: var(--box-shadow-primary);
+    }
+
+    .intro-container h2 {
+        font-size: 22px;
+    }
+
+    /* Allows the elements to be hovered */
+    .intro-container:hover {
+        opacity: 0.7;
+        font-weight: bold;
+    }
+
+
+    .intro-container b {
+        padding-bottom: 10px;
+        text-align: left;
+    }
+
+    /* The introduction for the intro which holds the p-tags */
+    .intro-section > p {
+
+        /* everything else */
+        font-size: 16px;
+        opacity: 0.5;
+
+        /* sizes */
+        width: 89%;
+
+        /* padding */
+        padding-top: 36px;
+    }
+
+
+    /* ------------------------------------- about us section ------------------------------------------ */
+
+    .about-container {
+        background: white;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .about-container h3 {
+        font-size: 1.6rem;
+    }
+
+
+    /* ------------------------------------ meet the team -------------------------------------------------- */
+    #meet-the-team {
+        background: white;
+    }
+
+    /* This controls the div called the team team-member */
     .team-member {
-        max-width: 40%; /* For smaller screens, two columns */
-        padding: 10px;
+
+        /* positioning */
+        position: relative;
+
+        /* sizes */
+        width: 100%;
+        height: 540px;
+        max-width: 100%;
+
+        /* flex components */
+        flex: 1;
+
+        /* margins */
+        margin: 0;
+        margin-bottom: 4px;
+    }
+
+    /* the headings for meet the team */
+    #meet-team>.about-container h4 {
+
+        /* positioning  */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+
+        /* padding */
+        padding-top: 10px;
+
+        /* everything else  */
+        color: black;
+    }
+
+    /* All rows that hold images */
+
+
+    /* The second row in the team */
+    div.team-row:nth-child(3) {
+        height: 650px;
+    }
+
+
+    /* The third row for the team */
+    div.team-row:nth-child(4) {
+        height: 1039px;
+    }
+
+
+    /* when applied performs the same action for each row which is 1,2,3 */
+    /* common functionalities */
+    div.team-row:nth-child(2),
+    div.team-row:nth-child(3),
+    div.team-row:nth-child(4) {
+
+        /* direction */
+        display: flex;
+        flex-direction: column;
+
+        /* margin */
+        margin-bottom: 10px;
+
+        /* everything else */
+        border: none;
+        background: lavender;
+
+    }
+
+    /* For each of the rows there are p-tag elements these tags allow them to be manipulated
+    directly */
+
+    /* the first p-tag for the first member of the team */
+    div.team-row:nth-child(2)>div:nth-child(1)>p:nth-child(3) {
+        padding-top: 103px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    /* the second p-tag for the second team team member */
+    div.team-row:nth-child(3)>div:nth-child(1)>p:nth-child(3) {
+
+        margin: auto;
+        padding-top: 130px;
+        width: 100%;
+    }
+
+    /* the third p-tag for the third team member */
+    div.team-row:nth-child(3)>div:nth-child(2)>p:nth-child(3) {
+        margin-top: 74px;
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+
+
+    /* The fourth p-tag for the fourth team-member */
+    div.team-row:nth-child(4)>div:nth-child(1)>p:nth-child(3) {
+        padding-top: 229px;
+        padding-bottom: 200px;
+    }
+
+    /* The fifth p-tag for the fifth team-member */
+    div.team-row:nth-child(4)>div:nth-child(2)>p:nth-child(3) {
+        margin-top: 71px;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+
+    /* the final p-tag for the final member of the team  */
+    div.team-member:nth-child(3)>p:nth-child(3) {
+        padding-top: 147px;
+        width: 90%;
+        margin: auto;
+    }
+
+
+    /* controls the all the p-tag within the team row */
+    .team-member p {
+
+        /* visibility */
+        visibility: visible;
+        opacity: 1;
+        transition: none;
+
+        /* everything else */
+        background: white;
+        color: black;
+        padding: 0;
+    }
+
+
+    /* Interactive elements with team to hover */
+    .team-member:hover {
+        box-shadow: none;
+    }
+
+    /* This controls the image within the row for each individual team member */
+    .team-member img {
+
+        /* sizes */
+        height: 130px;
+        width: 130px;
+
+        /* spacing */
+
+        margin: auto;
+        margin-top: auto;
+        margin-top: 189px;
+
+        /* everything else */
+        border-radius: 50%;
+        border: 7px solid lavender;
+        cursor: pointer;
+        box-shadow: var(--box-shadow-primary);
+        transform: translateY(-152px);
+        z-index: 1000;
+
+    }
+
+    /* ----------------------------------------------------- testimonals section -------------------------------------- */
+    #testimonials .container {
+        width: 98%;
+    }
+
+    #testimonials h1 {
+
+        /* everything else */
+        color: gray;
+        font-size: 21px;
+        font-weight: bolder;
+        text-transform: capitalize;
+
+        /* spacing */
+        padding-top: 24px;
+        padding-bottom: 21px;
+
+        /* margin */
+        margin: auto;
+
+        /* sizes */
+        width: 97%;
+
+    }
+
+    /* The testimonal cards */
+    .testimonal-card-1,
+    .testimonal-card-2,
+    .testimonal-card-3 {
+        border-radius: 0;
+        margin-bottom: 3px;
+        width: 100%;
+    }
+
+
+    /* gives a padding of 33px for each p tag in the card */
+    .testimony-card .body p {
+        padding-top: 33px;
+    }
+
+    /* For a small screen the readme is not displayed */
+    .read-more-btn {
+        display: none;
+    }
+
+
+    /* the quotation that mark the users testimonals */
+    .intro-quote-1,
+    .intro-quote-2 {
+        color: gray;
+        height: 28px;
+
+    }
+
+    /* the quotes mark */
+    /* quote 1 */
+    .quote-img-1 {
+
+        /* positioning */
+        top: 15px;
+        left: 17px;
+    }
+
+    /* quote 2 */
+    .quote-img-2 {
+        position: absolute;
+        top: 82%;
+        right: 2%;
+    }
+
+    /* shared functionality */
+    .quote-img-1,
+    .quote-img-2 {
+        border: none;
+        color: gray;
+    }
+
+
+    /* the profile pic located inside the testimonal card */
+    .quote-profile-pic {
+
+        border-radius: 50%;
+        top: 3%;
+        left: 40%;
+        right: 50%;
+    }
+
+     /* Inside the testimonal card at the bottom left corner this p-tag this controls the size of the text */
+     .company-name p {
+        font-size: 0.8rem;
+    }
+
+    /* the review hold the ratings i.e the stars located in the right corner of testimonal card */
+    .review {
+
+        /* flex elements */
+        display: flex;
+        justify-content: space-evenly;
+
+        /* sizes */
+        width: 1%;
+
+        /* padding */
+        padding-left: 10px;
+       
+        /* margin */
+        margin-right: 45px;
+    }
+
+
+    /* controls the height of stars */
+    .review img {
+        height: 14px;
+    }
+
+
+    /* ----------------------------------------------- The contact form section ------------------------------------------ */
+
+    /* the contact section title  */
+    #contact-us-section-title {
+        padding-bottom: 24px;
+        font-size: 2.1rem;
+    }
+    
+
+    /* The contact form container */
+    #contact-us .container {
+
+        /* flex elements */
+        display: flex;
+        flex-direction: column;
+
+        /* sizes */
+        width: 87%;
+
+        /* margins */
+        margin: auto;
+    }
+
+    /* The actual form */
+    .contact-form {
+        box-shadow: none;
+        padding: 1px;
+        width: 100%;
+    }
+
+    /* The contact form header */
+    #contact-form-label {
+        text-align: left
+    }
+
+    /* the p-tags inside the contact form  */
+    .contact-msg>p {
+        font-size: 1rem;
+    }
+
+
+    /* ----------------------------------------------- The main footer section ---------------------------------------------*/
+
+    /* the footer container */
+    footer .container {
+        font-family: var(--secondary-font-Poppins-family);
+        margin: auto;
+        width: 91%;
+    }
+
+    /* affects all the divs in the container */
+    footer .container div {
+        padding-top: 10px;
+        width: 100%;
+    }
+    
+    /* The spacing for the link in the .footer */
+    .legal>a,
+    .resources>a,
+    .policies>a,
+    .community>a {
+        padding-top: 1px;
+    }
+
+    /* the copyright */
+    div.copyright {
+        margin-top: 10px;
+    }
+
+    /* The message icon that enables live chat to be displayed */
+    .message-us {
+        display: none;
+    }
+
+
+    /* --------------------------------------------------- The quotation banner -------------------------------------------- */
+    figure blockquote p {
+        font-size: 1.1rem;
+        ;
+    }
+
+    #quoteText {
+        font-size: 1.1rem;
+    }
+
+    q {
+        font-size: 1rem;
     }
 
 }
 
-@media (max-width: 480px) {
-    .team-member {
-        max-width: 90%; /* For mobile screens, one column */
+
+
+
+/* To be finished later */
+
+@media (min-width: 577px) and (max-width: 768px) {
+
+    /* The testimonal sections */
+    .testimonials .container {
+        display: flex;
+        flex-wrap: wrap;
     }
+
+    .testimonal-card-1 {
+        width: 49%;
+        height: 730px;
+        border-radius: 0%;
+        margin-bottom: 10px;
+    }
+
+    .testimonal-card-2 {
+        width: 49%;
+        height: 730px;
+        border-radius: 0;
+        margin-bottom: 10px;
+    }
+
+    .testimonal-card-3 {
+        width: 100%;
+        border-radius: 0;
+        height: 480px;
+    }
+
+
+
 }
+
+/* To be completed later */
+@media (min-width: 769px) and (max-width: 992px) {
+   
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  
+}
+
+@media (min-width: 1201px) {
+  
+}
+
+
+
 
 /* End of responsive elements */
